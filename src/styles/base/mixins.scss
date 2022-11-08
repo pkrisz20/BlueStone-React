@@ -1,0 +1,104 @@
+@mixin imageCover {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin absoluteCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin absoluteFullSize {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin flexBox($justify: "center", $align: "center", $gap: 0) {
+    display: flex;
+    justify-content: #{$justify};
+    align-items: #{$align};
+    gap: $gap;
+}
+
+@mixin gridBox($justify: "center", $cols: 4, $gap-cols: 30px, $gap-rows: 50px) {
+    display: grid;
+    justify-content: #{$justify};
+    grid-template-columns: repeat($cols, percentage(1 / $cols));
+    column-gap: $gap-cols;
+    row-gap: $gap-rows;
+    margin: 0 (($cols - 1) * $gap-cols) / 2;
+}
+
+@mixin btn($color: $c-white, $bg: $c-black, $hover: rgba($bg, .75)) {
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: $base-radius;
+    padding: $base-padding $base-padding * 2;
+    color: $color;
+    background-color: $bg;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        background-color: $hover;
+    }
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+    scrollbar-color: $foreground-color $background-color;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        width: $size;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $foreground-color;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $background-color;
+    }
+}
+
+@mixin paddingBottom($first, $second, $fit: cover) {
+    display: block;
+    padding-bottom: percentage($first / $second);
+    position: relative;
+    width: 100%;
+    height: 0;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: $fit;
+        object-position: center;
+    }
+}
+
+@mixin respImage($ratio, $fit: cover) {
+    display: block;
+    padding-bottom: percentage($ratio);
+    position: relative;
+
+    img {
+        display: block;
+        @include imageCover();
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}

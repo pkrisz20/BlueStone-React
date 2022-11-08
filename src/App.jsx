@@ -1,30 +1,27 @@
-import React, { useState, useRef } from 'react';
-import TodoList from './components/TodoList';
-import Button from './components/Button';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import HomePage from './pages/Home';
+import AboutPage from './pages/About';
+import NotFoundPage from './pages/NotFound';
+import Navbar from './components/Navbar';
 
 function App() {
-  const [todos, setTodos] = useState([]);
-  const todoNameRef = useRef();
+  // HERE IS THE ERROR
+  const location = useLocation();
+  const [isNotFound, setIsNotFound] = useState(false);
 
-  function handleAddTodo(e) {
-    const name = todoNameRef.current.value;
-    if (name === '') return;
-    console.log(`Typed name: ${name}`);
-  }
+
 
   return (
     <div className="App">
-      <h1>Todo List App</h1>
-  
-      <div className="box">
-        <input ref={todoNameRef} type="text" />
-        <Button onClick={handleAddTodo} text='Add Task' />
-        <Button text='Clear' />
-        <Button text='Complete' />
-        <div>0 left to do</div>
-      </div>
-
-      <TodoList todos={todos} />
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />}/>
+          <Route path="/about/:username" element={<AboutPage />}/>
+          <Route path="*" element={<NotFoundPage />}/>
+        </Routes>
+      </Router>
     </div>
   );
 }

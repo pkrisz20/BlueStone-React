@@ -1,0 +1,53 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+*::selection {
+    background-color: $c-theme;
+    color: $c-white;
+}
+
+.wrapper {
+    padding: 0 30px;
+    width: 100%;
+
+    @media #{$r-min-xl} {
+        padding: 0 15px;
+        max-width: $wrapper;
+        margin: 0 auto;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+ol, ul {
+    list-style: none;
+    padding: 0;
+}
+
+section {
+    padding: 40px 0;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    border: none;
+    outline: none;
+}
