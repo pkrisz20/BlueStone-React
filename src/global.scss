@@ -21,6 +21,30 @@ code {
     align-items: center;
     flex-direction: column;
 
+    .navbar {
+        padding: 25px 15px;
+        background-color: $c-success;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        &-link {
+            text-decoration: none;
+            color: $c-white;
+            font-size: 20px;
+            font-weight: 400;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+
+            &.active {
+                background-color: $c-white;
+                color: $c-success;
+            }
+        }
+    }
+
     .btn {
         @include btn();
 

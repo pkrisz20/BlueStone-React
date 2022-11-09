@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/Home';
 import FactsPage from './pages/Facts';
 import NotFoundPage from './pages/NotFound';
+import ImagesPage from './pages/Images';
 import Navbar from './components/Navbar';
 // import Button from './components/Button';
 
@@ -23,6 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />}/>
           <Route path="/facts" element={<FactsPage />}/>
+          <Route path="/images" element={<ImagesPage />}/>
           <Route path="*" element={<NotFoundPage />}/>
         </Routes>
       </Router>

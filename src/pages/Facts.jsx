@@ -4,7 +4,7 @@ import BlockTitle from "../components/BlockTitle";
 import Button from "../components/Button";
 import { FaArrowDown } from "react-icons/fa";
 
-const About = () => {
+const Facts = () => {
     const [data, setData] = useState([]);
     const [amount, setAmount] = useState(1);
     const [error, setError] = useState("");
@@ -13,19 +13,25 @@ const About = () => {
         fetchData(amount);
     }, []);
 
-    function fetchData (amount) {
+    function fetchData () {
         if (!amount) return;
 
-        axios.get(`https://dog-facts-api.herokuapp.com/api/v1/resources/dogs?number=${amount}`)
-        .then(response => {
-            if (response.status === 200) {
-                setData(response.data);
-                console.log(response.data);
-            }
-        })
-        .catch(err => {
-            setError(err);
-        });
+        try {
+            axios.get(`https://dog-facts-api.herokuapp.com/api/v1/resources/dogs?number=${amount}`)
+            .then(response => {
+                if (response.status === 200) {
+                    setData(response.data);
+                    console.log(response.data);
+                }
+            })
+            .catch(err => {
+                setError(err);
+            });
+        }
+        catch(err) {
+            console.log(err.message);
+            return;
+        }
     }
 
     return (
@@ -37,14 +43,14 @@ const About = () => {
                     data?.map((item, index) => {
                         return (<p style={{ marginBottom: '20px' }} key={index}>{ item.fact }</p>);
                     })
-                ) : (<p>{ error }</p>)
+                ) : (<h3 style={{ marginBottom: '20px', backgroundColor: 'red', padding: '10px', borderRadius: '10px', color: 'white' }}>Something went wrong. Please try it later...</h3>)
             }
 
-            <label className="search-label"><FaArrowDown />How many you wanna?<FaArrowDown /></label>
+            <label className="search-label"><FaArrowDown />How many fact you wanna get?<FaArrowDown /></label>
             <input className="search-input" type="number" onChange={ (e) => setAmount(e.target.value) } />
-            <Button text="Get another fact" onClick={ () => fetchData(amount) } />
+            <Button text="Get another fact" style={{ textTransform: 'uppercase'}} onClick={ fetchData } />
         </>
     );
 }
 
-export default About;
+export default Facts;

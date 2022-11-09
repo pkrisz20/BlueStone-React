@@ -5,8 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 import Button from '../components/Button';
 import { FaLongArrowAltUp } from 'react-icons/fa';
 
-const LOCAL_STORAGE_KEY = 'todoApp.todos';
-
 const Home = () => {
     const [todos, setTodos] = useState([]);
     // const [filteredList, setFilteredList] = useState([]);
@@ -14,15 +12,6 @@ const Home = () => {
     const [isOpenSearch, setIsOpenSearch] = useState(false);
     const [searchText, setSearchText] = useState("");
     const todoNameRef = useRef();
-    
-    useEffect(() => {
-        const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-        if (storedTodos) setTodos(storedTodos);
-    }, []);
-    
-    useEffect(() => {
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
-    }, [todos]);
 
     function handleAddTodo() {
         const name = todoNameRef.current.value;
@@ -71,7 +60,7 @@ const Home = () => {
                 <div className="box">
                     <input className='tasks-input' ref={todoNameRef} type="text" />
                     <Button onClick={ handleAddTodo } text="Add Todo" />
-                    <Button onClick={ handleClearTodos } text="Clear Completed" />
+                    <Button onClick={ handleClearTodos } color="blue" text="Clear Completed" />
                     <Button color="red" onClick={ () => setTodos([]) } text="Clear All" />
                 </div>
             ) : <h3><FaLongArrowAltUp />Click on the button above to open the form! <FaLongArrowAltUp /></h3> }
