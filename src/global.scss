@@ -21,12 +21,28 @@ code {
     align-items: center;
     flex-direction: column;
 
+    .btn {
+        @include btn();
+
+        &:hover {
+            background-color: $c-middleblue;
+        }
+    }
+
     .title {
         color: $c-middleblue;
         font-weight: 900;
         margin: 50px 0;
         text-decoration: underline;
         text-underline-offset: 12px;
+    }
+
+    .toggle-btn {
+        margin-bottom: 30px;
+    }
+
+    .toggle-search {
+        margin: 25px 0;
     }
 
     .box {
@@ -50,16 +66,36 @@ code {
         }
 
         .btn {
-            @include btn();
             margin: 0 10px;
             font-size: 18px;
-
-            &:hover {
-                background-color: $c-middleblue;
-            }
         }
     }
 
+    .search {
+
+        &-label {
+            font-size: 24px;
+            text-decoration: underline;
+        }
+
+        &-input {
+            margin: 20px 0;
+            background-color: $c-9;
+            height: 50px;
+            border-radius: 5px;
+            font-size: 20px;
+            padding: 0 15px;
+    
+            &::placeholder {
+                color: $c-e;
+            }
+    
+            &:focus {
+                background-color: $c-e;
+                outline: 2px solid $c-middleblue;
+            }
+        }
+    }
     .todos-list {
         background-color: $c-c;
         border-radius: 5px;
@@ -71,6 +107,9 @@ code {
             margin: 6px 0;
             color: $c-3;
             border-bottom: 1px solid $c-black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
             &.done {
                 background-color: $c-theme;

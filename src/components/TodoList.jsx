@@ -1,10 +1,10 @@
 import Todo from './Todo';
 
-const TodoList = ({ todos, toggleTodo }) => {
+const TodoList = ({ todos, toggleTodo, onDelete }) => {
     return (
         <div className="todos-list">
             {todos.map(todo => {
-                return <Todo key={ todo.id } todo={ todo } toggleTodo={ toggleTodo } />
+                return <Todo key={ todo.id } onDelete={onDelete} todo={ todo } toggleTodo={ toggleTodo } />
             })}
         </div>
     );

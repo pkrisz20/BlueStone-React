@@ -1,24 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/Home';
-import AboutPage from './pages/About';
+import FactsPage from './pages/Facts';
 import NotFoundPage from './pages/NotFound';
 import Navbar from './components/Navbar';
+// import Button from './components/Button';
 
 function App() {
   // HERE IS THE ERROR
-  const location = useLocation();
-  const [isNotFound, setIsNotFound] = useState(false);
+  // const location = useLocation();
+  // const [isNotFound, setIsNotFound] = useState(false);
 
-
+  // function handle() {
+  //   console.log('clicked');
+  // }
 
   return (
     <div className="App">
       <Router>
         <Navbar />
+        {/* <Button color="green" onClick={handle} text="Click me" /> */}
         <Routes>
           <Route path="/" element={<HomePage />}/>
-          <Route path="/about/:username" element={<AboutPage />}/>
+          <Route path="/facts" element={<FactsPage />}/>
           <Route path="*" element={<NotFoundPage />}/>
         </Routes>
       </Router>
