@@ -1,13 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import BlockTitle from '../components/BlockTitle';
-import TodoList from '../components/TodoList';
+import Todo from '../components/Todo';
 import { v4 as uuidv4 } from 'uuid';
 import Button from '../components/Button';
 import { FaLongArrowAltUp } from 'react-icons/fa';
 
 const Home = () => {
     const [todos, setTodos] = useState([]);
-    // const [filteredList, setFilteredList] = useState([]);
     const [isOpenForm, setIsOpenForm] = useState(false);
     const [isOpenSearch, setIsOpenSearch] = useState(false);
     const [searchText, setSearchText] = useState("");
@@ -37,11 +36,6 @@ const Home = () => {
     const deleteTask = (id) => {
         const filteredList = todos.filter(item => item.id !== id);
         setTodos(filteredList);
-    }
-
-    const filterTodo = async (text) => {
-        await setSearchText(text);
-        await console.log(searchText);
     }
 
     return (
@@ -76,17 +70,20 @@ const Home = () => {
             { isOpenSearch && (
                 <>
                     <label className="search-label">Search</label>
-                    <input className="search-input" type="text" placeholder="Type here to search..." onChange={ (e) => filterTodo(e.target.value) } />
+                    <input className="search-input" type="text" placeholder="Type here to search..." onChange={(e) => setSearchText(e.target.value) } />
                 </>)
             }
 
-            {/* SIMPLE LIST */}
-            { (todos.length > 0) && <TodoList onDelete={ deleteTask } todos={ todos } toggleTodo={ toggleTodo } /> }
-
-            {/* FILTERED LIST */}
-            {/* { (todos.length > 0 && searchText.length > 0) && (<TodoList onDelete={ deleteTask } todos={ todos } toggleTodo={ toggleTodo} />) } */}
-
-            {/* { (filteredList.length === 0 && searchText.length > 0) && (<p>Not found any item like that.</p>) } */}
+            {/* LIST */}
+            {(todos.length > 0) && todos.filter(value => {
+                if (searchText === "") return value;
+                else if (value.name.toLowerCase().includes(searchText.toLowerCase())) {
+                    return value;
+                }
+            }).map((item) => {
+                return (<Todo key={ item.id } onDelete={deleteTask} todo={ item } toggleTodo={ toggleTodo } />);
+            })}
+            {/* { (todos.length > 0) && <TodoList onDelete={ deleteTask } todos={ todos } toggleTodo={ toggleTodo } /> } */}
 
             {/* COUNTER */}
             { todos.length > 0 ? (<div>{ todos.length > 1 ? 'Tasks' : 'Task'} left: <strong>{ todos.filter(todo => !todo.completed).length }</strong></div>)
