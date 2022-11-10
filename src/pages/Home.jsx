@@ -1,9 +1,10 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import BlockTitle from '../components/BlockTitle';
 import Todo from '../components/Todo';
 import { v4 as uuidv4 } from 'uuid';
 import Button from '../components/Button';
 import { FaLongArrowAltUp } from 'react-icons/fa';
+import useUpdateLogger from '../hooks/useUpdateLogger';
 
 const Home = () => {
     const [todos, setTodos] = useState([]);
@@ -37,6 +38,8 @@ const Home = () => {
         const filteredList = todos.filter(item => item.id !== id);
         setTodos(filteredList);
     }
+
+    useUpdateLogger(todos);
 
     return (
         <>
@@ -74,16 +77,20 @@ const Home = () => {
                 </>)
             }
 
-            {/* LIST */}
-            {(todos.length > 0) && todos.filter(value => {
-                if (searchText === "") return value;
-                else if (value.name.toLowerCase().includes(searchText.toLowerCase())) {
-                    return value;
-                }
-            }).map((item) => {
-                return (<Todo key={ item.id } onDelete={deleteTask} todo={ item } toggleTodo={ toggleTodo } />);
-            })}
-            {/* { (todos.length > 0) && <TodoList onDelete={ deleteTask } todos={ todos } toggleTodo={ toggleTodo } /> } */}
+            {/* LIST WITH FILTERING */}
+            {(todos.length > 0) &&
+                <div className="todos-list">
+                    {(todos.length > 0) && todos.filter(value => {
+                        if (searchText === "") return true;
+                        else if (value.name.toLowerCase().includes(searchText.toLowerCase())) {
+                            return true;
+                        }
+                    }).map(item => {
+                        return (<Todo key={ item.id } onDelete={deleteTask} todo={ item } toggleTodo={ toggleTodo } />);
+                        })
+                    }
+                </div>
+            }
 
             {/* COUNTER */}
             { todos.length > 0 ? (<div>{ todos.length > 1 ? 'Tasks' : 'Task'} left: <strong>{ todos.filter(todo => !todo.completed).length }</strong></div>)
