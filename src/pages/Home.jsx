@@ -74,7 +74,8 @@ const Home = () => {
                 <>
                     <label className="search-label">Search</label>
                     <input className="search-input" type="text" placeholder="Type here to search..." onChange={(e) => setSearchText(e.target.value) } />
-                </>)
+                </>
+                )
             }
 
             {/* LIST WITH FILTERING */}

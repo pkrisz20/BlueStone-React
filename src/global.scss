@@ -29,6 +29,14 @@ code {
         align-items: center;
         justify-content: space-evenly;
 
+        .cart-btn {
+            padding: 10px;
+            background-color: transparent;
+            color: $c-white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
         &-link {
             text-decoration: none;
             color: $c-white;

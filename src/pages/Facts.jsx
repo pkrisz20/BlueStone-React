@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 import axios from 'axios';
 import BlockTitle from "../components/BlockTitle";
 import Button from "../components/Button";
@@ -9,7 +9,7 @@ const Facts = () => {
     const [amount, setAmount] = useState(1);
     const [error, setError] = useState("");
     
-    useEffect(() => {
+    useLayoutEffect(() => {
         fetchData(amount);
     }, []);
 
@@ -21,7 +21,7 @@ const Facts = () => {
             .then(response => {
                 if (response.status === 200) {
                     setData(response.data);
-                    console.log(response.data);
+                    // console.log(response.data);
                 }
             })
             .catch(err => {

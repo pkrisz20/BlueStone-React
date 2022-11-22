@@ -1,0 +1,133 @@
+@import "../base/variables.scss";
+
+.cart {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    min-height: 100vh;
+    background-color: $c-7;
+    transition: right .3s ease-in-out;
+
+    &.cart-open {
+        right: 0;
+    }
+
+    &-total {
+        font-weight: 700;
+        font-size: 20px;
+        color: $c-white;
+        margin-left: 20px;
+    }
+
+    &-clear {
+        margin: 15px 0 0 20px;
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    &-list {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        &-close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            color: $c-white;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        &_item {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .product {
+
+                &-top {
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                }
+
+                &-title {
+                    font-size: 18px;
+                    color: $c-white;
+                    margin-bottom: 15px;
+                    margin-right: auto;
+                    text-transform: uppercase;
+                }
+
+                &-image {
+                    width: 50%;
+                    height: auto;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+
+                &-quantity {
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: $c-white;
+                }
+
+                &-bottom {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    margin: 10px 0;
+                }
+
+                &-btn {
+                    width: 25px;
+                    height: 40px;
+                    font-size: 30px;
+                    font-weight: 700;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &.left {
+                        border-radius: 0;
+                        border-top-left-radius: 25px;
+                        border-bottom-left-radius: 25px;
+                    }
+
+                    &.right {
+                        border-radius: 0;
+                        border-top-right-radius: 25px;
+                        border-bottom-right-radius: 25px;
+                    }
+                }
+
+                &-input {
+                    width: 50px;
+                    height: 40px;
+                    color: $c-3;
+                    font-size: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}

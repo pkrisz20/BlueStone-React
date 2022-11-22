@@ -1,26 +1,28 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/Home';
 import FactsPage from './pages/Facts';
 import NotFoundPage from './pages/NotFound';
 import ImagesPage from './pages/Images';
 import Navbar from './components/Navbar';
-// import Button from './components/Button';
+import Cart from './components/Cart';
+import useToggle from "./hooks/useToggle";
+import useClickOutside from "./hooks/useClickOutside";
+import { useRef } from 'react';
 
 function App() {
-  // HERE IS THE ERROR
-  // const location = useLocation();
-  // const [isNotFound, setIsNotFound] = useState(false);
+  const [isOpenCart, toggleIsOpenCart] = useToggle(false);
+  const cartRef = useRef();
+  const cartButtonRef = useRef();
 
-  // function handle() {
-  //   console.log('clicked');
-  // }
+  useClickOutside(cartRef, (e) => {
+    if (!(cartButtonRef.current.contains(e.target)) && isOpenCart) toggleIsOpenCart(false);
+  });
 
   return (
     <div className="App">
       <Router>
-        <Navbar />
-        {/* <Button color="green" onClick={handle} text="Click me" /> */}
+        <Navbar cartButtonRef={cartButtonRef} openCart={() => toggleIsOpenCart()} />
+        <Cart cartRef={cartRef} isOpen={isOpenCart} closeCart={() => toggleIsOpenCart()} />
         <Routes>
           <Route path="/" element={<HomePage />}/>
           <Route path="/facts" element={<FactsPage />}/>
