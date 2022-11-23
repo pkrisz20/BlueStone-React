@@ -1,11 +1,12 @@
-const Button = ({ text, color, onClick, classProp }) => {
+const Button = ({ text, color, onClick, classProp, disabled, icon }) => {
     return (
         <button
+            disabled={disabled}
             onClick={ onClick }
             style={{ backgroundColor: color }}
             className={`btn ${classProp}`}
             >
-            { text }
+            { icon } { text }
         </button>
     );
 }

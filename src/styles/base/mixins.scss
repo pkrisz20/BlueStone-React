@@ -51,7 +51,7 @@
     }
 }
 
-@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, $c-white, 50%)) {
     scrollbar-color: $foreground-color $background-color;
     scrollbar-width: thin;
 

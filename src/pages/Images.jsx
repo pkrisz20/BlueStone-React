@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+// import { useSearchParams } from "react-router-dom";
 import BlockTitle from "../components/BlockTitle";
-import 'font-awesome/css/font-awesome.min.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/components/Carousel.scss";
 import Slider from "react-slick";
+import Products from "../components/Products";
 
 const Images = () => {
-    const [searchParams, setSearchParams] = useSearchParams({ count: 3 });
+    // const [searchParams, setSearchParams] = useSearchParams({ count: 3 });
     const [images, setImages] = useState([
         {
             title: "Mount Everest",
@@ -33,6 +33,90 @@ const Images = () => {
         {
             title: "Grand Canyon",
             image: "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+    ]);
+
+    const [products, setProducts] = useState([
+        {
+            id: 1,
+            title: "Photograper",
+            image: "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            price: 1650,
+            isOnDiscount: false,
+            discount: null,
+            isAvailable: false
+        },
+        {
+            id: 2,
+            title: "Hands",
+            image: "https://images.pexels.com/photos/1726966/pexels-photo-1726966.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            price: 1250,
+            isOnDiscount: true,
+            discount: 650,
+            isAvailable: true
+        },
+        {
+            id: 3,
+            title: "Product",
+            image: "https://images.pexels.com/photos/1526719/pexels-photo-1526719.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            price: 8950,
+            isOnDiscount: true,
+            discount: 890,
+            isAvailable: true
+        },
+        {
+            id: 4,
+            title: "Product title",
+            image: "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            price: 6800,
+            isOnDiscount: false,
+            discount: null,
+            isAvailable: false
+        },
+        {
+            id: 5,
+            title: "Product name",
+            image: "https://images.pexels.com/photos/1726966/pexels-photo-1726966.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            price: 4590,
+            isOnDiscount: true,
+            discount: 2980,
+            isAvailable: false
+        },
+        {
+            id: 6,
+            title: "Umbrella",
+            image: "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            price: 2500,
+            isOnDiscount: false,
+            discount: null,
+            isAvailable: true
+        },
+        {
+            id: 1,
+            title: "Photograper",
+            image: "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            price: 1650,
+            isOnDiscount: false,
+            discount: null,
+            isAvailable: false
+        },
+        {
+            id: 2,
+            title: "Hands",
+            image: "https://images.pexels.com/photos/1726966/pexels-photo-1726966.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            price: 1250,
+            isOnDiscount: true,
+            discount: 650,
+            isAvailable: true
+        },
+        {
+            id: 3,
+            title: "Product",
+            image: "https://images.pexels.com/photos/1526719/pexels-photo-1526719.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            price: 8950,
+            isOnDiscount: true,
+            discount: 890,
+            isAvailable: true
         },
     ]);
 
@@ -68,15 +152,13 @@ const Images = () => {
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
                 }
             },
             {
                 breakpoint: 600,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2,
+                    slidesToScroll: 1,
                 }
             },
             {
@@ -91,7 +173,8 @@ const Images = () => {
 
     return (
         <>
-            <BlockTitle title={`Carousel with Images ${searchParams.get("count")}`} />
+            {/* <BlockTitle title={`Carousel with Images ${searchParams.get("count")}`} /> */}
+            <BlockTitle title="Carousel with Images" />
 
             <Slider {...settings}>
                 {
@@ -105,6 +188,8 @@ const Images = () => {
                     })
                 }
             </Slider>
+
+            <Products products={products} />
         </>
     );
 }

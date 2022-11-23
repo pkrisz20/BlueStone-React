@@ -4,7 +4,7 @@ import Todo from '../components/Todo';
 import { v4 as uuidv4 } from 'uuid';
 import Button from '../components/Button';
 import { FaLongArrowAltUp } from 'react-icons/fa';
-import useUpdateLogger from '../hooks/useUpdateLogger';
+// import useUpdateLogger from '../hooks/useUpdateLogger';
 
 const Home = () => {
     const [todos, setTodos] = useState([]);
@@ -39,7 +39,7 @@ const Home = () => {
         setTodos(filteredList);
     }
 
-    useUpdateLogger(todos);
+    // useUpdateLogger(todos);
 
     return (
         <>

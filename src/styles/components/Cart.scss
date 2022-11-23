@@ -47,6 +47,17 @@
             cursor: pointer;
         }
 
+        &-empty {
+            background-color: $c-theme;
+            color: $c-white;
+            font-size: 16px;
+            text-align: center;
+            padding: 10px 20px;
+            width: 100%;
+            margin-top: 60px;
+            border: 2px solid $c-white;
+        }
+
         &_item {
             width: 100%;
             display: flex;
@@ -54,6 +65,17 @@
             align-items: center;
 
             .product {
+
+                &-remove {
+                    text-transform: uppercase;
+                    background-color: $c-red;
+                    color: $c-white;
+                    font-weight: 700;
+
+                    &:hover {
+                    background-color: $c-red2;
+                    }
+                }
 
                 &-top {
                     display: flex;
@@ -123,9 +145,7 @@
                     height: 40px;
                     color: $c-3;
                     font-size: 20px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    text-align: center;
                 }
             }
         }

@@ -15,6 +15,7 @@ function App() {
   const cartButtonRef = useRef();
 
   useClickOutside(cartRef, (e) => {
+    // close the cart by clicking outside of it
     if (!(cartButtonRef.current.contains(e.target)) && isOpenCart) toggleIsOpenCart(false);
   });
 
