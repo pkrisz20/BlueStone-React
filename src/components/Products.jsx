@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../styles/components/Products.scss";
 import Slider from "react-slick";
 import { useCallback } from "react";
-import { useDispatch, useSelector, useMemo } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addCart } from "../features/cart";
 
 const Products = ({ products }) => {
@@ -75,10 +75,9 @@ const Products = ({ products }) => {
     }
     
     const checkIsInCart = useCallback((productId) => {
-        return cart.includes(productId) ? 'false' : 'true';
+        const isInCart = cart.some(item => item.id === productId);
+        return isInCart;
     }, [cart]);
-
-    // const isInCart = useMemo((productID) => checkIsInCart(productID), [cart]);
 
     return (
         <>
@@ -86,7 +85,6 @@ const Products = ({ products }) => {
 
             <Slider {...settings}>
                 {
-                    // TODO: It has to be re-rendered after added an item to cart cause of 'Add to cart' button
                     products?.map(item => {
                         return (
                             <div className="product" key={item.id}>
@@ -104,7 +102,7 @@ const Products = ({ products }) => {
                                     }
                                     <small>{checkIsInCart(item.id)}</small>
                                     
-                                    { checkIsInCart(item.id) ? <Button disabled={!item.isAvailable} onClick={() => handleAddToCart(item)} text="Add to cart" icon={<i className="fas fa-shopping-cart"></i>} classProp={`product-bottom-cart ${!item.isAvailable ? 'not-allowed' : ''}`} />
+                                    { !checkIsInCart(item.id) ? <Button disabled={!item.isAvailable} onClick={() => handleAddToCart(item)} text="Add to cart" icon={<i className="fas fa-shopping-cart"></i>} classProp={`product-bottom-cart ${!item.isAvailable ? 'not-allowed' : ''}`} />
                                     : <div className="product-bottom-cart-added"><i className="fas fa-check-circle"></i> Already added to cart</div> }
                                 </div>
                             </div>

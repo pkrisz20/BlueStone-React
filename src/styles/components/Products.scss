@@ -114,6 +114,15 @@
                     &.not-allowed {
                         cursor: not-allowed;
                     };
+
+                    &-added {
+                        margin-top: 10px;
+                        background-color: $c-theme;
+                        padding: 8px;
+                        width: 100%;
+                        color: $c-white;
+                        border-radius: 4px;
+                    }
                 }
             }
 

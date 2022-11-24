@@ -16,17 +16,17 @@ export const cartSlice = createSlice({
         clearCart: (state) => {
             state.value = [];
         },
-        // deleteItem: (state, actions) => {
-            // console.log(state);
-            // state.value.filter(element => { return element.id !== actions.payload });
-            // console.log(state.value.filter(element => element !== action.payload));
-        // },
+        // this doesn't work yet
+        deleteItem: (state, actions) => {
+            console.log('click')
+            state.value.filter(item => item.id === actions.payload);
+        },
         addCart: (state, actions) => {
             state.value.push(actions.payload);
         }
     }
 });
 
-export const { increment, decrement, incrementByAmount, clearCart, addCart } = cartSlice.actions;
+export const { increment, decrement, incrementByAmount, clearCart, addCart, deleteItem } = cartSlice.actions;
 
 export default cartSlice.reducer;

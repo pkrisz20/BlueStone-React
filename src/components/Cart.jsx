@@ -1,7 +1,7 @@
 import Button from "./Button";
 import "../styles/components/Cart.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment, incrementByAmount, clearCart } from "../features/cart";
+import { decrement, increment, incrementByAmount, clearCart, deleteItem } from "../features/cart";
 import { useMemo } from "react";
 
 const Cart = ({ isOpen, closeCart, cartRef }) => {
@@ -35,7 +35,7 @@ const Cart = ({ isOpen, closeCart, cartRef }) => {
                                         <input onChange={(e) => dispatch(incrementByAmount([item.id, e.target.value]))} className="product-input" value={item.quantity} type="number" />
                                         <Button classProp="product-btn right" text="+" onClick={() => dispatch(increment(item.id))}/>
                                     </div>
-                                    {/* <Button text="Remove" classProp="product-remove" onClick={() => dispatch(deleteItem(item.id))} /> */}
+                                    <Button text="Remove" classProp="product-remove" onClick={() => dispatch(deleteItem(item.id))} />
                                 </li>
                             );
                         })
