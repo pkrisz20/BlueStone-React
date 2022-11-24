@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import { useSearchParams } from "react-router-dom";
 import BlockTitle from "../components/BlockTitle";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,7 +7,6 @@ import Slider from "react-slick";
 import Products from "../components/Products";
 
 const Images = () => {
-    // const [searchParams, setSearchParams] = useSearchParams({ count: 3 });
     const [images, setImages] = useState([
         {
             title: "Mount Everest",
@@ -44,7 +42,7 @@ const Images = () => {
             price: 1650,
             isOnDiscount: false,
             discount: null,
-            isAvailable: false
+            isAvailable: true
         },
         {
             id: 2,
@@ -71,7 +69,7 @@ const Images = () => {
             price: 6800,
             isOnDiscount: false,
             discount: null,
-            isAvailable: false
+            isAvailable: true
         },
         {
             id: 5,
@@ -98,7 +96,7 @@ const Images = () => {
             price: 1250,
             isOnDiscount: false,
             discount: null,
-            isAvailable: false
+            isAvailable: true
         },
         {
             id: 8,
@@ -173,7 +171,6 @@ const Images = () => {
 
     return (
         <>
-            {/* <BlockTitle title={`Carousel with Images ${searchParams.get("count")}`} /> */}
             <BlockTitle title="Carousel with Images" />
 
             <Slider {...settings}>

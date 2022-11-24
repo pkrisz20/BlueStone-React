@@ -103,7 +103,7 @@ const Products = ({ products }) => {
                                     <small>{checkIsInCart(item.id)}</small>
                                     
                                     { !checkIsInCart(item.id) ? <Button disabled={!item.isAvailable} onClick={() => handleAddToCart(item)} text="Add to cart" icon={<i className="fas fa-shopping-cart"></i>} classProp={`product-bottom-cart ${!item.isAvailable ? 'not-allowed' : ''}`} />
-                                    : <div className="product-bottom-cart-added"><i className="fas fa-check-circle"></i> Already added to cart</div> }
+                                    : <div className="product-bottom-cart-added"><i className="fas fa-check-circle"></i> Added to cart</div> }
                                 </div>
                             </div>
                         );

@@ -1,4 +1,5 @@
 @import "../base/variables.scss";
+@import "../base/mixins.scss";
 
 .cart {
     position: absolute;
@@ -6,7 +7,7 @@
     top: 0;
     right: -400px;
     width: 400px;
-    min-height: 100vh;
+    height: 100vh;
     background-color: $c-7;
     transition: right .3s ease-in-out;
 
@@ -14,15 +15,23 @@
         right: 0;
     }
 
+    &-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 20px;
+        border-top: 2px solid $c-white;
+    }
+
     &-total {
         font-weight: 700;
         font-size: 20px;
         color: $c-white;
-        margin-left: 20px;
+        margin: 0 0 20px;
     }
 
     &-clear {
-        margin: 15px 0 0 20px;
         text-transform: uppercase;
         font-size: 15px;
         font-weight: 700;
@@ -30,12 +39,15 @@
 
     &-list {
         width: 100%;
-        height: auto;
+        height: calc(100vh - 130px);
         padding: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
         position: relative;
+        overflow-y: auto;
+        @include scrollbars(5px, $c-4);
+        
 
         &-close {
             position: absolute;

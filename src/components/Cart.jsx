@@ -44,10 +44,10 @@ const Cart = ({ isOpen, closeCart, cartRef }) => {
             </ul>
 
             { cart?.length > 0 &&
-                <>
+                <div className="cart-bottom">
                     <div className="cart-total">Total: {totalPrice} €</div> 
                     <Button classProp="cart-clear" text="Clear cart" onClick={() => dispatch(clearCart())} /> 
-                </>
+                </div>
             }
         </div>
     );

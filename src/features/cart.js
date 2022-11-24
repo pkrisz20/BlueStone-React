@@ -17,10 +17,7 @@ export const cartSlice = createSlice({
             state.value = [];
         },
         // this doesn't work yet
-        deleteItem: (state, actions) => {
-            console.log('click')
-            state.value.filter(item => item.id === actions.payload);
-        },
+        deleteItem: (state, actions) => { state.value = state.value.filter(item => item.id !== actions.payload); },
         addCart: (state, actions) => {
             state.value.push(actions.payload);
         }
