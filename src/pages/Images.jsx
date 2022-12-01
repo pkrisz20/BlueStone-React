@@ -171,7 +171,7 @@ const Images = () => {
 
     return (
         <>
-            <BlockTitle title="Carousel with Images" />
+            <BlockTitle title="Images" />
 
             <Slider {...settings}>
                 {
