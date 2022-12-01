@@ -21,7 +21,6 @@ const Facts = () => {
             .then(response => {
                 if (response.status === 200) {
                     setData(response.data);
-                    // console.log(response.data);
                 }
             })
             .catch(err => {

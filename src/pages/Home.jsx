@@ -4,6 +4,7 @@ import Todo from '../components/Todo';
 import { v4 as uuidv4 } from 'uuid';
 import Button from '../components/Button';
 import { FaLongArrowAltUp } from 'react-icons/fa';
+import ContactForm from '../components/ContactForm';
 // import useUpdateLogger from '../hooks/useUpdateLogger';
 
 const Home = () => {
@@ -97,6 +98,8 @@ const Home = () => {
             { todos.length > 0 ? (<div>{ todos.length > 1 ? 'Tasks' : 'Task'} left: <strong>{ todos.filter(todo => !todo.completed).length }</strong></div>)
                 : (<div>Your todo list is empty</div>)
             }
+
+            <ContactForm />
         </>
     );
 }

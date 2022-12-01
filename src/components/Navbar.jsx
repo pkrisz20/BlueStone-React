@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import DropdownMenu from './DropdownMenu';
 import { useState } from 'react';
+// import i18next from 'i18next';
 
 const Navbar = ({ openCart, cartButtonRef }) => {
     const cart = useSelector(state => state.cart.value);
