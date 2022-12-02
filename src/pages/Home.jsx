@@ -4,7 +4,7 @@ import Todo from '../components/Todo';
 import { v4 as uuidv4 } from 'uuid';
 import Button from '../components/Button';
 import { FaLongArrowAltUp } from 'react-icons/fa';
-import ContactForm from '../components/ContactForm';
+import Form from '../components/Form';
 // import useUpdateLogger from '../hooks/useUpdateLogger';
 
 const Home = () => {
@@ -99,7 +99,7 @@ const Home = () => {
                 : (<div>Your todo list is empty</div>)
             }
 
-            <ContactForm />
+            <Form />
         </>
     );
 }

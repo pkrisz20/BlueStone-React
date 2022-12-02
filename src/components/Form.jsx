@@ -4,7 +4,7 @@ import { userSchema } from "../validations/userValidation";
 import BlockTitle from './BlockTitle';
 import "../styles/components/Contact.scss";
 
-const ContactForm = () => {
+const Form = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         mode: "onChange",
@@ -40,4 +40,4 @@ const ContactForm = () => {
     );
 }
 
-export default ContactForm;
+export default Form;
