@@ -3,10 +3,12 @@ import "../styles/components/Cart.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { decrement, increment, incrementByAmount, clearCart, deleteItem } from "../features/cart";
 import { useMemo } from "react";
+import { useTranslation } from 'react-multi-lang';
 
 const Cart = ({ isOpen, closeCart, cartRef }) => {
     const cart = useSelector(state => state.cart.value);
     const dispatch = useDispatch();
+    const trans = useTranslation();
 
     const totalPrice = useMemo(() => {
         return cart.reduce((total, item) => item.quantity * item.price + total, 0);
@@ -35,18 +37,18 @@ const Cart = ({ isOpen, closeCart, cartRef }) => {
                                         <input onChange={(e) => dispatch(incrementByAmount([item.id, e.target.value]))} className="product-input" value={item.quantity} type="number" />
                                         <Button classProp="product-btn right" text="+" onClick={() => dispatch(increment(item.id))}/>
                                     </div>
-                                    <Button text="Remove" classProp="product-remove" onClick={() => dispatch(deleteItem(item.id))} />
+                                    <Button text={trans("cart.remove")} classProp="product-remove" onClick={() => dispatch(deleteItem(item.id))} />
                                 </li>
                             );
                         })
-                    ) : <div className="cart-list-empty">Your cart is empty</div>
+                    ) : <div className="cart-list-empty">{trans("cart.empty")}</div>
                 }
             </ul>
 
             { cart?.length > 0 &&
                 <div className="cart-bottom">
                     <div className="cart-total">Total: {totalPrice} €</div> 
-                    <Button classProp="cart-clear" text="Clear cart" onClick={() => dispatch(clearCart())} /> 
+                    <Button classProp="cart-clear" text={trans("cart.clear")} onClick={() => dispatch(clearCart())} /> 
                 </div>
             }
         </div>

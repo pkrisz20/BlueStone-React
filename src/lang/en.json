@@ -1,5 +1,18 @@
-[
-    {
-        "welcome" : "Welcome"
+{
+    "nav" : {
+        "home" : "Home",
+        "images": "Images",
+        "facts": "Facts"
+    },
+    "cart" : {
+        "empty" : "Your cart is empty",
+        "products" : "Products",
+        "discount" : "Discount",
+        "available" : "Available",
+        "not-available": "Out of stock",
+        "add" : "Add to cart",
+        "added" : "Already added to cart",
+        "remove": "Remove",
+        "clear": "Clear cart"
     }
-]
+}

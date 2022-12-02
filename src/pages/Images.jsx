@@ -5,8 +5,11 @@ import "slick-carousel/slick/slick-theme.css";
 import "../styles/components/Carousel.scss";
 import Slider from "react-slick";
 import Products from "../components/Products";
+import { useTranslation } from 'react-multi-lang';
 
 const Images = () => {
+    const trans = useTranslation();
+
     const [images, setImages] = useState([
         {
             title: "Mount Everest",
@@ -171,7 +174,7 @@ const Images = () => {
 
     return (
         <>
-            <BlockTitle title="Images" />
+            <BlockTitle title={ trans("nav.images") } />
 
             <Slider {...settings}>
                 {

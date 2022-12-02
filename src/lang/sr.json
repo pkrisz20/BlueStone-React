@@ -1,5 +1,18 @@
-[
-    {
-        "welcome" : "Dobrodošli"
+{
+    "nav" : {
+        "home" : "Glavna",
+        "images": "Slike",
+        "facts": "Činjenice"
+    },
+    "cart" : {
+        "empty" : "Vaša korpa je prazna",
+        "products" : "Proizvodi",
+        "discount" : "Akcija",
+        "available" : "Dostupan",
+        "not-available": "Nema na lageru",
+        "add" : "Dodaj u korpu",
+        "added" : "Već je u korpu",
+        "remove": "Obriši",
+        "clear": "Obriši sve"
     }
-]
+}

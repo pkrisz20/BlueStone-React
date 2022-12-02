@@ -8,9 +8,10 @@ import Slider from "react-slick";
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addCart } from "../features/cart";
+import { useTranslation } from 'react-multi-lang';
 
 const Products = ({ products }) => {
-
+    const trans = useTranslation();
     const cart = useSelector(state => state.cart.value);
     const dispatch = useDispatch();
 
@@ -81,14 +82,14 @@ const Products = ({ products }) => {
 
     return (
         <>
-            <BlockTitle title="Products" />
+            <BlockTitle title={trans("cart.products")} />
 
             <Slider {...settings}>
                 {
                     products?.map(item => {
                         return (
                             <div className="product" key={item.id}>
-                                { item.discount && <div className="product-discount">Discount</div> }
+                                { item.discount && <div className="product-discount">{trans("cart.discount")}</div> }
                                 <div className="product-image">
                                     <img src={item.image} alt="product image" />
                                 </div>
@@ -97,13 +98,13 @@ const Products = ({ products }) => {
                                     <h4 className={`product-bottom-price ${item.isOnDiscount ? 'old-price' : ''}`}>{item.price} €</h4>
                                     { (item?.isOnDiscount && item?.discount !== null) && (<h4 className="product-bottom-price">{item.discount} €</h4>) }
                                     {
-                                        item.isAvailable ? <small className="product-bottom-available"><i className="fas fa-check-circle"></i> Available</small> :
-                                        <small className="product-bottom-unavailable"><i className="fas fa-times-circle"></i> Out of stock</small>
+                                        item.isAvailable ? <small className="product-bottom-available"><i className="fas fa-check-circle"></i> {trans("cart.available")}</small> :
+                                        <small className="product-bottom-unavailable"><i className="fas fa-times-circle"></i> {trans("cart.not-available")}</small>
                                     }
                                     <small>{checkIsInCart(item.id)}</small>
                                     
-                                    { !checkIsInCart(item.id) ? <Button disabled={!item.isAvailable} onClick={() => handleAddToCart(item)} text="Add to cart" icon={<i className="fas fa-shopping-cart"></i>} classProp={`product-bottom-cart ${!item.isAvailable ? 'not-allowed' : ''}`} />
-                                    : <div className="product-bottom-cart-added"><i className="fas fa-check-circle"></i> Added to cart</div> }
+                                    { !checkIsInCart(item.id) ? <Button disabled={!item.isAvailable} onClick={() => handleAddToCart(item)} text={trans("cart.add")} icon={<i className="fas fa-shopping-cart"></i>} classProp={`product-bottom-cart ${!item.isAvailable ? 'not-allowed' : ''}`} />
+                                    : <div className="product-bottom-cart-added"><i className="fas fa-check-circle"></i> {trans("cart.added")}</div> }
                                 </div>
                             </div>
                         );

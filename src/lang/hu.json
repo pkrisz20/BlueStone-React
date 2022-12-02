@@ -1,5 +1,18 @@
-[
-    {
-        "welcome" : "Üdvözöljük"
+{
+    "nav" : {
+        "home" : "Főoldal",
+        "images": "Képek",
+        "facts": "Tények"
+    },
+    "cart" : {
+        "empty" : "Az Ön kosara üres",
+        "products" : "Termékek",
+        "discount" : "Akció",
+        "available" : "Elérhető",
+        "not-available": "Nincs raktáron",
+        "add" : "Kosárhoz adás",
+        "added" : "Kosárhoz adva",
+        "remove": "Eltávolítás",
+        "clear": "Kosár ürítése"
     }
-]
+}

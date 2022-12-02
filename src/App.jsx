@@ -14,11 +14,10 @@ import en from './lang/en.json';
 import sr from './lang/sr.json';
 
 setTranslations({ hu, en, sr });
-setDefaultLanguage('sr');
+setDefaultLanguage('en');
 
 function App() {
-  const { lang } = useParams();
-  const t = useTranslation();
+  // const lang = useParams();
   const [isOpenCart, toggleIsOpenCart] = useToggle(false);
   const cartRef = useRef();
   const cartButtonRef = useRef();
@@ -30,17 +29,16 @@ function App() {
 
   return (
     <div className="App">
-      {/* <div>{ t('welcome') }</div> */}
       <Router>
         <Navbar cartButtonRef={cartButtonRef} openCart={() => toggleIsOpenCart()} />
         <Cart cartRef={cartRef} isOpen={isOpenCart} closeCart={() => toggleIsOpenCart()} />
         <Routes>
-          <Route path=":lang">
+          {/* <Route path=":lang"> */}
             <Route path="/" element={<HomePage />}/>
             <Route path="/facts" element={<FactsPage />}/>
             <Route path="/images" element={<ImagesPage />}/>
             <Route path="*" element={<NotFoundPage />}/>
-          </Route>
+          {/* </Route> */}
         </Routes>
       </Router>
     </div>
