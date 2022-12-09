@@ -14,5 +14,29 @@
         "added" : "Već je u korpu",
         "remove": "Obriši",
         "clear": "Obriši sve"
+    },
+    "todo": {
+        "empty" : "Nema ništa za raditi"
+    },
+    "users": {
+        "sign_up" : "Registracija",
+        "fullname": "Ime i prezime",
+        "age": "Starosti",
+        "password": "Lozinka",
+        "email" : "Mejl",
+        "confirm" : "Lozinka opet"
+    },
+    "validation": {
+        "string_invalid" : "Treba da bude tekst",
+        "name_required": "Ime je obavezno",
+        "email_error_invalid" : "Mejl nije važno",
+        "email_error_required" : "Mejl je obavezno",
+        "number_invalid" : "Treba da bude broj",
+        "number_invalid_negative" : "Treba da bude vise od nula",
+        "number_integer": "Treba da bude ceo broj",
+        "password_required" : "Lozinka je obavezno",
+        "passwords_invalid_match" : "Lozinke trabeju da budu isto",
+        "password_at_least" : "Lozinka je treba da bude barem 4 karaktera",
+        "password_max" : "Lozinka treba da bude manje od 20 karaktera"
     }
 }

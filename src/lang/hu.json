@@ -14,5 +14,29 @@
         "added" : "Kosárhoz adva",
         "remove": "Eltávolítás",
         "clear": "Kosár ürítése"
+    },
+    "todo": {
+        "empty" : "Nincs semmi tennivaló"
+    },
+    "users": {
+        "sign_up" : "Regisztárció",
+        "fullname": "Teljes név",
+        "age": "Kor",
+        "password": "Jelszó",
+        "email" : "E-mail",
+        "confirm" : "Jelszó megerősítése"
+    },
+    "validation": {
+        "string_invalid" : "Szöveg kell hogy legyen",
+        "name_required": "A név kötelező mező",
+        "email_error_invalid" : "Az email helytelen",
+        "email_error_required" : "Az email kötelező mező",
+        "number_invalid" : "Számértéknek kell lennie",
+        "number_invalid_negative" : "Pozitiv érték kell hogy legyen",
+        "number_integer": "Egész szám kell hogy legyen",
+        "password_required" : "A jelszó kötelező mező",
+        "passwords_invalid_match" : "A két jelszónak egyeznie kell",
+        "password_at_least" : "A jelszónak legalább 4 karakter kell, hogy legyen",
+        "password_max" : "A jelszó maximum 20 karakter lehet"
     }
 }

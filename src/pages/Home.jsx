@@ -5,9 +5,10 @@ import { v4 as uuidv4 } from 'uuid';
 import Button from '../components/Button';
 import { FaLongArrowAltUp } from 'react-icons/fa';
 import Form from '../components/Form';
-// import useUpdateLogger from '../hooks/useUpdateLogger';
+import { useTranslation } from 'react-multi-lang';
 
 const Home = () => {
+    const trans = useTranslation();
     const [todos, setTodos] = useState([]);
     const [isOpenForm, setIsOpenForm] = useState(false);
     const [isOpenSearch, setIsOpenSearch] = useState(false);
@@ -40,13 +41,11 @@ const Home = () => {
         setTodos(filteredList);
     }
 
-    // useUpdateLogger(todos);
-
     return (
         <>
             <BlockTitle title="Todo List App" />
 
-            {/* FORM */}
+            {/* TODO FORM */}
 
             <Button
                 classProp="toggle-btn"
@@ -75,8 +74,7 @@ const Home = () => {
                 <>
                     <label className="search-label">Search</label>
                     <input className="search-input" type="text" placeholder="Type here to search..." onChange={(e) => setSearchText(e.target.value) } />
-                </>
-                )
+                </>)
             }
 
             {/* LIST WITH FILTERING */}
@@ -96,7 +94,7 @@ const Home = () => {
 
             {/* COUNTER */}
             { todos.length > 0 ? (<div>{ todos.length > 1 ? 'Tasks' : 'Task'} left: <strong>{ todos.filter(todo => !todo.completed).length }</strong></div>)
-                : (<div>Your todo list is empty</div>)
+                : (<div>{trans("todo.empty")}</div>)
             }
 
             <Form />

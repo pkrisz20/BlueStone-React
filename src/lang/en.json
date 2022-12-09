@@ -14,5 +14,29 @@
         "added" : "Already added to cart",
         "remove": "Remove",
         "clear": "Clear cart"
+    },
+    "todo": {
+        "empty" : "Your todo list is empty"
+    },
+    "users": {
+        "sign_up" : "Sign Up",
+        "fullname": "Full name",
+        "age": "Age",
+        "password": "Password",
+        "email" : "E-mail",
+        "confirm" : "Confirm password"
+    },
+    "validation": {
+        "string_invalid" : "Must be text",
+        "name_required": "The name is required",
+        "email_error_invalid" : "The email is invalid",
+        "email_error_required" : "Email is required",
+        "number_invalid" : "Must be a number",
+        "number_invalid_negative" : "Must be greater than zero",
+        "number_integer": "Must be an integer",
+        "password_required" : "Password is required",
+        "passwords_invalid_match" : "Passwords don't match",
+        "password_at_least" : "Password must be at least 4 characters",
+        "password_max" : "Password must be at most 20 characters"
     }
 }
