@@ -5,10 +5,10 @@ import BlockTitle from './BlockTitle';
 import "../styles/components/Contact.scss";
 import { useTranslation } from 'react-multi-lang';
 import { useState } from 'react';
-import TextField from '@mui/material/TextField';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+// import TextField from '@mui/material/TextField';
+// import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+// import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 const Form = () => {
     const [value, setValue] = useState(null);
@@ -33,7 +33,7 @@ const Form = () => {
                 <input className={`form-input ${errors.email ? 'invalid' : ''}`} name="email" type="text" placeholder={trans('users.email')} {...register("email")} />
                 {errors.email && <small className='form-error'>{trans(errors.email?.message)}</small>}
 
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DatePicker
                         label="Basic example"
                         value={value}
@@ -42,7 +42,7 @@ const Form = () => {
                         }}
                         renderInput={(params) => <TextField {...params} />}
                     />
-                </LocalizationProvider>
+                </LocalizationProvider> */}
 
                 <input className={`form-input ${errors.age ? 'invalid' : ''}`} name="age" type="number" placeholder={trans('users.age')} {...register("age")} />
                 {errors.age && <small className='form-error'>{trans(errors.age?.message)}</small>}

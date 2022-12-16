@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../styles/components/Carousel.scss";
 import Slider from "react-slick";
 import Products from "../components/Products";
+import ProductDetails from "../components/ProductDetails";
 import { useTranslation } from 'react-multi-lang';
 
 const Images = () => {
@@ -190,6 +191,8 @@ const Images = () => {
             </Slider>
 
             <Products products={products} />
+
+            <ProductDetails product={products[2]} />
         </>
     );
 }

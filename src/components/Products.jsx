@@ -74,7 +74,7 @@ const Products = ({ products }) => {
             dispatch(addCart({ ...product, quantity: 1 }));
         }
     }
-    
+
     const checkIsInCart = useCallback((productId) => {
         const isInCart = cart.some(item => item.id === productId);
         return isInCart;
@@ -102,7 +102,7 @@ const Products = ({ products }) => {
                                         <small className="product-bottom-unavailable"><i className="fas fa-times-circle"></i> {trans("cart.not-available")}</small>
                                     }
                                     <small>{checkIsInCart(item.id)}</small>
-                                    
+
                                     { !checkIsInCart(item.id) ? <Button disabled={!item.isAvailable} onClick={() => handleAddToCart(item)} text={trans("cart.add")} icon={<i className="fas fa-shopping-cart"></i>} classProp={`product-bottom-cart ${!item.isAvailable ? 'not-allowed' : ''}`} />
                                     : <div className="product-bottom-cart-added"><i className="fas fa-check-circle"></i> {trans("cart.added")}</div> }
                                 </div>
