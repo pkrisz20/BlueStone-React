@@ -16,6 +16,16 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 .App {
     display: flex;
     justify-content: center;
@@ -112,7 +122,7 @@ code {
             border-radius: 5px;
             font-size: 20px;
             padding: 0 15px;
-    
+
             &:focus {
                 background-color: $c-e;
                 outline: 2px solid $c-middleblue;
@@ -139,11 +149,11 @@ code {
             border-radius: 5px;
             font-size: 20px;
             padding: 0 15px;
-    
+
             &::placeholder {
                 color: $c-e;
             }
-    
+
             &:focus {
                 background-color: $c-e;
                 outline: 2px solid $c-middleblue;
@@ -169,10 +179,10 @@ code {
                 background-color: $c-theme;
                 color: $c-white;
             }
-    
+
             label {
                 font-size: 20px;
-    
+
                 input {
                     margin-right: 10px;
                     width: 15px;

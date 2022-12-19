@@ -42,7 +42,7 @@ const Images = () => {
         {
             id: 1,
             title: "Photographer",
-            image: "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            images: ["https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"],
             price: 1650,
             isOnDiscount: false,
             discount: null,
@@ -51,7 +51,7 @@ const Images = () => {
         {
             id: 2,
             title: "Hands",
-            image: "https://images.pexels.com/photos/1726966/pexels-photo-1726966.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            images: ["https://images.pexels.com/photos/1726966/pexels-photo-1726966.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"],
             price: 1250,
             isOnDiscount: true,
             discount: 650,
@@ -60,7 +60,7 @@ const Images = () => {
         {
             id: 3,
             title: "Product",
-            image: "https://images.pexels.com/photos/1526719/pexels-photo-1526719.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            images: ["https://images.pexels.com/photos/1526719/pexels-photo-1526719.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"],
             price: 8950,
             isOnDiscount: true,
             discount: 890,
@@ -69,7 +69,7 @@ const Images = () => {
         {
             id: 4,
             title: "Product title",
-            image: "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            images: ["https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"],
             price: 6800,
             isOnDiscount: false,
             discount: null,
@@ -78,7 +78,7 @@ const Images = () => {
         {
             id: 5,
             title: "Product name",
-            image: "https://images.pexels.com/photos/1726966/pexels-photo-1726966.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            images: ["https://images.pexels.com/photos/1726966/pexels-photo-1726966.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"],
             price: 4590,
             isOnDiscount: true,
             discount: 2980,
@@ -87,7 +87,7 @@ const Images = () => {
         {
             id: 6,
             title: "Umbrella",
-            image: "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            images: ["https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"],
             price: 2500,
             isOnDiscount: false,
             discount: null,
@@ -96,7 +96,7 @@ const Images = () => {
         {
             id: 7,
             title: "Photograper 2.0",
-            image: "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            images: ["https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"],
             price: 1250,
             isOnDiscount: false,
             discount: null,
@@ -105,7 +105,7 @@ const Images = () => {
         {
             id: 8,
             title: "Hands 2",
-            image: "https://images.pexels.com/photos/1726966/pexels-photo-1726966.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            images: ["https://images.pexels.com/photos/1726966/pexels-photo-1726966.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"],
             price: 1500,
             isOnDiscount: true,
             discount: 900,
@@ -114,7 +114,7 @@ const Images = () => {
         {
             id: 9,
             title: "Product 2",
-            image: "https://images.pexels.com/photos/1526719/pexels-photo-1526719.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            images: ["https://images.pexels.com/photos/1526719/pexels-photo-1526719.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"],
             price: 7500,
             isOnDiscount: true,
             discount: 6500,

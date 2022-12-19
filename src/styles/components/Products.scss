@@ -1,30 +1,41 @@
 .slick {
 
-    // &-list, &-track {
-    //     display: flex;
-    // }
+    &-track {
+        display: flex !important;
+    }
+
+    &-slide {
+        height: inherit !important;
+
+        & > div {
+            height: 100%;
+        }
+    }
 
     &-slider {
         margin: 0 auto;
         width: 90%;
         height: auto;
         height: 100%;
-        
+
         .slick-slide {
             padding:  0 15px;
             margin: 0;
             height: 100%;
         }
-        
+
         .product {
             width: 100%;
             height: 100%;
+            display: flex !important;
+            flex-direction: column;
+            justify-content: space-between;
             background-color: $c-d;
             border-radius: 5px;
             position: relative;
             transition: all .3s ease-in-out;
             cursor: pointer;
-            
+
             &:hover {
                 box-shadow: 0 0 15px rgba(0, 0, 0, .4);
 
@@ -48,11 +59,11 @@
                 border: 1px solid $c-a;
                 text-transform: uppercase;
             }
-            
+
             &-image {
                 width: 100%;
                 overflow: hidden;
-                
+
                 img {
                     transition: .3s ease-in-out;
                     width: 100%;
@@ -61,12 +72,12 @@
                     object-position: center;
                 }
             }
-            
+
             &-bottom {
                 padding: 15px;
                 display: flex;
                 flex-direction: column;
-                
+
                 &-title {
                     color: $c-black;
                     font-size: 22px;
@@ -78,7 +89,7 @@
                     color: $c-5;
                     font-size: 18px;
                     margin-bottom: 10px;
-                    
+
                     &.old-price {
                         color: $c-9;
                         font-size: 16px;
@@ -94,7 +105,7 @@
                         color: $c-theme;
                     }
                 }
-                
+
                 &-unavailable {
                     font-weight: 700;
                     color: $c-red;
@@ -139,7 +150,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    
+
                     &.left {
                         border-radius: 0;
                         border-top-left-radius: 20px;

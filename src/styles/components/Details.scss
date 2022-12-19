@@ -1,16 +1,8 @@
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+
 .details {
     margin-top: 50px;
     @include gridBox("center", 2, 15px);
-
-    .gallery-image {
-        &:not(:nth-child(1)) {
-            display: none;
-        }
-
-        img {
-            @include imageCover();
-        }
-    }
 }
 .product {
     &-name {
@@ -53,16 +45,47 @@
             height: 50px;
             width: 60px;
             background-color: $c-b;
-            color: $c-a;
+            color: $c-3;
             font-size: 20px;
             text-align: center;
             border-radius: 5px;
+
+            &::placeholder {
+                color: $c-3;
+            }
         }
 
         &-btn {
-            @include btn();
-            font-size: 40px;
-            padding: 0 15px !important;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            @include flexBox();
+            border-radius: 5px;
+            background-color: $c-dark-blue;
+            color: $c-white;
+            text-transform: uppercase;
+            transition: .2s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $c-theme;
+            }
+        }
+    }
+
+    &-add-cart {
+        font-size: 16px;
+        border-radius: 5px;
+        background-color: $c-dark-blue;
+        color: $c-white;
+        text-transform: uppercase;
+        transition: .2s ease-in-out;
+        cursor: pointer;
+        padding: $base-padding $base-padding * 2;
+        font-weight: 700;
+
+        &:hover {
+            background-color: $c-theme;
         }
     }
 

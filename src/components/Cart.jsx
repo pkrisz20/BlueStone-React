@@ -24,14 +24,14 @@ const Cart = ({ isOpen, closeCart, cartRef }) => {
                             return (
                                 <li key={item.id} className="cart-list_item">
                                     <h3 className="product-title">{item.title}</h3>
-            
+
                                     <div className="product-top">
                                         <div className="product-image">
-                                            <img src={item.image} alt="product image" />
+                                            <img src={item.images[0]} alt="product image" />
                                         </div>
                                         <div className="product-quantity">{item.quantity} x {item.price} €</div>
                                     </div>
-            
+
                                     <div className="product-bottom">
                                         <Button classProp="product-btn left" text="-" onClick={() => dispatch(decrement(item.id))} />
                                         <input onChange={(e) => dispatch(incrementByAmount([item.id, e.target.value]))} className="product-input" value={item.quantity} type="number" />
@@ -47,8 +47,8 @@ const Cart = ({ isOpen, closeCart, cartRef }) => {
 
             { cart?.length > 0 &&
                 <div className="cart-bottom">
-                    <div className="cart-total">Total: {totalPrice} €</div> 
-                    <Button classProp="cart-clear" text={trans("cart.clear")} onClick={() => dispatch(clearCart())} /> 
+                    <div className="cart-total">Total: {totalPrice} €</div>
+                    <Button classProp="cart-clear" text={trans("cart.clear")} onClick={() => dispatch(clearCart())} />
                 </div>
             }
         </div>

@@ -91,7 +91,7 @@ const Products = ({ products }) => {
                             <div className="product" key={item.id}>
                                 { item.discount && <div className="product-discount">{trans("cart.discount")}</div> }
                                 <div className="product-image">
-                                    <img src={item.image} alt="product image" />
+                                    <img src={item.images[0]} alt="product image" />
                                 </div>
                                 <div className="product-bottom">
                                     <h3 className="product-bottom-title">{item.title}</h3>
@@ -112,7 +112,7 @@ const Products = ({ products }) => {
                 }
             </Slider>
         </>
-    )
+    );
 }
 
 export default Products;
