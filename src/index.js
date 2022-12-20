@@ -5,6 +5,9 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import cartReducer from "./features/cart";
 
+// en, hu, sr-Latn
+window.lang = "en";
+
 const store = configureStore({
   reducer: {
     cart: cartReducer,

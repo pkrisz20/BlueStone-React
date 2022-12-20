@@ -5,6 +5,8 @@
 @import "./base/mixins.scss";
 @import "./base/base.scss";
 
+@import "react-widgets/scss/styles.scss";
+
 body {
     margin: 0;
     padding: 0;
@@ -14,16 +16,6 @@ body {
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type=number] {
-    -moz-appearance: textfield;
 }
 
 .App {

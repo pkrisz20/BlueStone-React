@@ -2,7 +2,8 @@
     "nav" : {
         "home" : "Home",
         "images": "Images",
-        "facts": "Facts"
+        "facts": "Facts",
+        "contact": "Contact"
     },
     "cart" : {
         "empty" : "Your cart is empty",
@@ -24,7 +25,8 @@
         "age": "Age",
         "password": "Password",
         "email" : "E-mail",
-        "confirm" : "Confirm password"
+        "confirm" : "Confirm password",
+        "contact_us": "Contact with Us"
     },
     "validation": {
         "string_invalid" : "Must be text",
@@ -38,5 +40,10 @@
         "passwords_invalid_match" : "Passwords don't match",
         "password_at_least" : "Password must be at least 4 characters",
         "password_max" : "Password must be at most 20 characters"
+    },
+    "product": {
+        "specifications": "Specifications",
+        "variants": "Variants",
+        "parameters": "Parameters"
     }
 }

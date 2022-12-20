@@ -83,9 +83,9 @@ const ProductDetails = ({ product }) => {
             <div className="product-specifications">
 
                 <div className="tab-headers">
-                    <div className={`tab-headers-link ${tab === 1 ? 'active' : ''}`} onClick={ () => toggleTab(1) }>Specifications</div>
-                    <div className={`tab-headers-link ${tab === 2 ? 'active' : ''}`} onClick={ () => toggleTab(2) }>Variants</div>
-                    <div className={`tab-headers-link ${tab === 3 ? 'active' : ''}`} onClick={ () => toggleTab(3) }>Parameters</div>
+                    <div className={`tab-headers-link ${tab === 1 ? 'active' : ''}`} onClick={ () => toggleTab(1) }>{ trans("product.specifications") }</div>
+                    <div className={`tab-headers-link ${tab === 2 ? 'active' : ''}`} onClick={ () => toggleTab(2) }>{ trans("product.variants") }</div>
+                    <div className={`tab-headers-link ${tab === 3 ? 'active' : ''}`} onClick={ () => toggleTab(3) }>{ trans("product.parameters") }</div>
                 </div>
 
                 { tab === 1 && (<div className="tab-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure maiores facilis aliquam natus quis magnam vitae nesciunt doloremque!</div>)}

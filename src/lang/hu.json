@@ -2,7 +2,8 @@
     "nav" : {
         "home" : "Főoldal",
         "images": "Képek",
-        "facts": "Tények"
+        "facts": "Tények",
+        "contact": "Kapcsolat"
     },
     "cart" : {
         "empty" : "Az Ön kosara üres",
@@ -24,7 +25,8 @@
         "age": "Kor",
         "password": "Jelszó",
         "email" : "E-mail",
-        "confirm" : "Jelszó megerősítése"
+        "confirm" : "Jelszó megerősítése",
+        "contact_us": "Lépjen velünk kapcsolatba"
     },
     "validation": {
         "string_invalid" : "Szöveg kell hogy legyen",
@@ -38,5 +40,10 @@
         "passwords_invalid_match" : "A két jelszónak egyeznie kell",
         "password_at_least" : "A jelszónak legalább 4 karakter kell, hogy legyen",
         "password_max" : "A jelszó maximum 20 karakter lehet"
+    },
+    "product": {
+        "specifications": "Specifikációk",
+        "variants": "Variációk",
+        "parameters": "Paraméterek"
     }
 }

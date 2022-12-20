@@ -2,7 +2,8 @@
     "nav" : {
         "home" : "Glavna",
         "images": "Slike",
-        "facts": "Činjenice"
+        "facts": "Činjenice",
+        "contact": "Kontakt"
     },
     "cart" : {
         "empty" : "Vaša korpa je prazna",
@@ -24,7 +25,8 @@
         "age": "Starosti",
         "password": "Lozinka",
         "email" : "Mejl",
-        "confirm" : "Lozinka opet"
+        "confirm" : "Lozinka opet",
+        "contact_us": "Kontakt sa Nama"
     },
     "validation": {
         "string_invalid" : "Treba da bude tekst",
@@ -38,5 +40,10 @@
         "passwords_invalid_match" : "Lozinke trabeju da budu isto",
         "password_at_least" : "Lozinka je treba da bude barem 4 karaktera",
         "password_max" : "Lozinka treba da bude manje od 20 karaktera"
+    },
+    "product": {
+        "specifications": "Specifikacije",
+        "variants": "Varijanti",
+        "parameters": "Parametri"
     }
 }
