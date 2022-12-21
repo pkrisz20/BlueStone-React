@@ -13,7 +13,7 @@ const DropdownMenu = ({ items, classProp, onClick, selectedLang }) => {
 
     return (
         <div className={`dropdown ${classProp ? classProp : ''}`} onClick={() => setOpen(!open)}>
-            <div ref={dropdownRef} className="dropdown-link">{ selectedLang.toUpperCase() ?? 'EN' }</div>
+            <div ref={dropdownRef} className="dropdown-link">{ selectedLang ?? 'EN' }</div>
 
             <ul className={`dropdown-list ${open ? 'active' : ''}`}>
                 { items?.filter(item => item.selected ? false : true).map((item, index) => {

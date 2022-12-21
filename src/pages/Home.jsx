@@ -6,21 +6,14 @@ import Button from '../components/Button';
 import { FaLongArrowAltUp } from 'react-icons/fa';
 import Form from '../components/Form';
 import { useTranslation } from 'react-multi-lang';
-import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
 
-const Home = ({ actualLanguage }) => {
+const Home = () => {
     const trans = useTranslation();
     const [todos, setTodos] = useState([]);
     const [isOpenForm, setIsOpenForm] = useState(false);
     const [isOpenSearch, setIsOpenSearch] = useState(false);
     const [searchText, setSearchText] = useState("");
     const todoNameRef = useRef();
-    let { language } = useParams();
-
-    useEffect(() => {
-        language = actualLanguage;
-    }, []);
 
     function handleAddTodo() {
         const name = todoNameRef.current.value;
