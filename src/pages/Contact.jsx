@@ -1,17 +1,14 @@
 import BlockTitle from '../components/BlockTitle';
-import { useTranslation } from 'react-multi-lang';
 import NumberPicker from "react-widgets/NumberPicker";
 import Multiselect from "react-widgets/Multiselect";
 import DatePicker from "react-widgets/DatePicker";
 import Localization from 'react-widgets/esm/Localization';
 import { DateLocalizer } from 'react-widgets/IntlLocalizer';
-import { DropdownList } from 'react-widgets';
 import "../styles/components/Donate.scss";
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 const Contact = () => {
-    const trans = useTranslation();
     const [dateValue, setDateValue] = useState("");
 
     useEffect(() => {
@@ -22,7 +19,17 @@ const Contact = () => {
         <section className="contact">
             <div className="wrapper">
                 <BlockTitle title="Donate" />
-                <div className="contact-map">MAP</div>
+                <MapContainer className="contact-map" center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true}>
+                    <TileLayer
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                    <Marker position={[51.505, -0.09]}>
+                        <Popup>
+                        A pretty CSS3 popup. <br /> Easily customizable.
+                        </Popup>
+                    </Marker>
+                </MapContainer>
                 <div className="contact-form">
                     <form>
                         <label className='label'>Donate amount</label>

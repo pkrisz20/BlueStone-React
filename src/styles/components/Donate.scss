@@ -4,7 +4,8 @@
 
     & > .wrapper {
         max-width: 50%;
-        @include gridBox("center", 2, 20px, 0);
+        @include flexBox();
+        flex-direction: column;
         margin: 0 auto;
 
         @media #{$r-max-m} {
@@ -13,8 +14,8 @@
     }
 
     &-map {
-        background-color: $c-3;
-        height: inherit!important;
+        height: 500px!important;
+        width: 100%!important;
     }
 
     &-form {
