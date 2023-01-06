@@ -5,31 +5,45 @@ import DatePicker from "react-widgets/DatePicker";
 import Localization from 'react-widgets/esm/Localization';
 import { DateLocalizer } from 'react-widgets/IntlLocalizer';
 import "../styles/components/Donate.scss";
-import { useState, useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { useState } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, Polygon } from 'react-leaflet';
+// import { geosearch } from "esri-leaflet-geocoder";
+// import 'esri-leaflet-geocoder/dist/esri-leaflet-geocoder.css';
 
 const Contact = () => {
     const [dateValue, setDateValue] = useState("");
+    // const mapRef = useRef();
 
-    useEffect(() => {
-        console.log(dateValue);
-    }, [dateValue]);
+    // useEffect(() => {
+    //     const { current } = mapRef;
+    //     const { leafletElement: map } = current;
+
+    //     const control = geosearch();
+    //     control.addTo(map);
+    // }, []);
+
+    const polygon = [
+        [46.08005284225203, 19.643207047941498],
+        [46.08880245979531, 19.631222957952453],
+        [46.09938887774486, 19.651762892607348],
+    ];
+    const purpleOptions = { color: 'purple' };
 
     return (
         <section className="contact">
             <div className="wrapper">
-                <BlockTitle title="Donate" />
-                <MapContainer className="contact-map" center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true}>
+                <BlockTitle title="Digital Hive" />
+                <MapContainer className="contact-map" center={[46.09470952698606, 19.653792205001455]} zoom={13} scrollWheelZoom={true}>
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
-                    <Marker position={[51.505, -0.09]}>
-                        <Popup>
-                        A pretty CSS3 popup. <br /> Easily customizable.
-                        </Popup>
+                    <Marker position={[46.09470952698606, 19.653792205001455]}>
+                        <Popup>Digital Hive IT center</Popup>
                     </Marker>
+                    <Polygon pathOptions={purpleOptions} positions={polygon} />
                 </MapContainer>
+
                 <div className="contact-form">
                     <form>
                         <label className='label'>Donate amount</label>

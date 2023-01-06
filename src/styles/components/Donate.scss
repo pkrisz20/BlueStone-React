@@ -16,6 +16,12 @@
     &-map {
         height: 500px!important;
         width: 100%!important;
+        border-radius: 15px;
+        border: 2px solid $c-theme;
+
+        .leaflet-bottom {
+            display: none;
+        }
     }
 
     &-form {
@@ -50,7 +56,6 @@
                     }
 
                     &-body {
-                        // border: 1px solid $c-3;
                         .rw-cell {
                             font-weight: 600;
                             &:hover {
