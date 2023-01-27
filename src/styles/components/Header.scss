@@ -1,0 +1,208 @@
+.header {
+    width: 100%;
+    position: relative;
+    z-index: 100;
+
+    &-top {
+        width: 100%;
+        height: 41px;
+        background-color: $c-1;
+        color: $c-white;
+
+        & > .wrapper {
+            @include flexBox("space-between");
+            height: 100%;
+        }
+
+        a {
+            color: $c-white;
+            transition: color .2s ease-in-out;
+
+            &:hover {
+                color: $c-b;
+            }
+        }
+
+        &-countries, &-contact {
+            display: flex;
+
+            &-link {
+                display: block;
+                margin: 0 16px;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 25px;
+                position: relative;
+
+                &:not(:last-child)::after {
+                    position: absolute;
+                    content: "";
+                    right: -16px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    height: 15px;
+                    width: 1px;
+                    background-color: $c-gray9B;
+                }
+            }
+
+            .socials {
+                display: flex;
+                margin: 0 0 0 16px;
+
+                &-link {
+                    &:first-child {
+                        margin: 0 10px 0 0;
+                    }
+                    &:not(:first-child) {
+                        margin: 0 10px;
+                    }
+
+                    i {
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+
+    &-bottom {
+        width: 100%;
+        height: 84px;
+        background-color: $c-white;
+
+        & > .wrapper {
+            @include flexBox("space-between");
+            height: 100%;
+        }
+
+        &-logo {
+            display: block;
+
+            picture {
+                img {
+                    object-fit: cover;
+                    object-position: center;
+                    width: 294px;
+                    height: 58px;
+                }
+            }
+        }
+    }
+
+    &-nav {
+        &-list {
+            width: 100%;
+            @include flexBox();
+
+            &-item {
+                margin: 0 15px;
+                &.dropdown-item {
+                    position: relative;
+
+                    &::before {
+                        visibility: hidden;
+                        opacity: 0;
+                        content:"";
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: 100%;
+                        width: 0;
+                        height: 0;
+                        border: 10px solid transparent;
+                        border-top: 0;
+                        border-bottom: 10px solid $c-white;
+                        z-index: 110;
+                        transition: visibility, opacity .2s ease-in;
+                    }
+
+                    i {
+                        transition: transform .2s ease-in-out;
+                    }
+
+                    &.open {
+                        // show the triangle when hover on list item
+                        &::before {
+                            visibility: visible;
+                            opacity: 1;
+                        }
+
+                        i {
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    .dropdown-menu {
+                        box-shadow: 0 -2px 26px rgba($c-gray3A, .5);
+                        background-color: $c-white;
+                        position: absolute;
+                        top: calc(100% + 9px);
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 175px;
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: visibility, opacity .2s ease-in;
+                        z-index: 105;
+
+                        &-item {
+                            padding: 10px 20px;
+                            width: 100%;
+                            cursor: pointer;
+                            transition: all .2s ease-in;
+
+                            &:hover {
+                                background-color: $c-grayD8;
+                            }
+
+                            &-link {
+                                transition: .2s ease-in;
+                                color: $c-dark;
+                                font-weight: 400;
+                                line-height: 25px;
+                                font-size: 16px;
+                            }
+                        }
+
+                        // show the menu when hover on list item
+                        &.is-open {
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                &-link {
+                    color: $c-dark;
+                    font-weight: 400;
+                    line-height: 25px;
+                    font-size: 16px;
+
+                    i {
+                        transform: translateX(5px);
+                        color: $c-dark;
+                        font-size: 14px;
+                    }
+                }
+
+                &-button {
+                    background-color: $c-theme;
+                    border-radius: 6px;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 25px;
+                    color: $c-white;
+                    width: 130px;
+                    height: 40px;
+                    cursor: pointer;
+                    transition: all .3s ease-in-out;
+
+                    &:hover {
+                        background-color: $c-darkblue;
+                    }
+                }
+            }
+        }
+    }
+}
