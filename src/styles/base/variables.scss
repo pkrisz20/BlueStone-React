@@ -12,7 +12,7 @@ $r-max-l: "(max-width: 1023px)";
 $r-max-xl: "(max-width: 1199px)";
 $r-max-xxl: "(max-width: 1499px)";
 
-$main-font: "Montserrat", sans-serif;
+$main-font: 'Poppins', sans-serif;
 
 $base-container: 1200px;
 $wrapper: 1170px;
@@ -22,15 +22,14 @@ $base-margin: 10px;
 $base-radius: 5px;
 $base-box-shadow: 1px 3px 5px rgba(0,0,0,.1);
 
-$c-theme: #0b8b51;
-$c-skyblue: #3d8d8f;
-$c-dark-blue: #082a2e;
-$c-middleblue: #0b5a8f;
-$c-dark: #212529;
-$c-red: #c70000;
-$c-red2: #b31e1e;
-$c-purple: #a500d8;
-$c-yellow: #b4e800;
+$c-theme: #0856a2;
+$c-darkblue: #3c108a;
+$c-pink: #ff00cc;
+$c-light-red: #ff3d55;
+$c-grayD8: #d8d8d8;
+$c-gray70: #707070;
+$c-dark: #242424;
+$c-gray3A: #3a3a3a;
 
 $c-warning: #c29b25;
 $c-success: #117a4b;
@@ -43,9 +42,6 @@ $c-discord: #5865f2;
 $c-github: #967bb6;
 $c-twitter: #1DA1F2;
 $c-youtube: #FF0000;
-
-$c-grayF3: #f3f3f3;
-$c-dark-theme: #212121;
 
 $c-white: #fff;
 $c-e: #eee;
