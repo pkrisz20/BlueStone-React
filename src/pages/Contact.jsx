@@ -27,7 +27,6 @@ const Contact = () => {
         [46.08880245979531, 19.631222957952453],
         [46.09938887774486, 19.651762892607348],
     ];
-    const purpleOptions = { color: 'purple' };
 
     return (
         <section className="contact">
@@ -41,7 +40,7 @@ const Contact = () => {
                     <Marker position={[46.09470952698606, 19.653792205001455]}>
                         <Popup>Digital Hive IT center</Popup>
                     </Marker>
-                    <Polygon pathOptions={purpleOptions} positions={polygon} />
+                    <Polygon pathOptions={{ color: 'purple' }} positions={polygon} />
                 </MapContainer>
 
                 <div className="contact-form">
