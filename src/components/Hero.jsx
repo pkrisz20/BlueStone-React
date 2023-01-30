@@ -4,7 +4,7 @@ import "../styles/components/Hero.scss"
 
 const Hero = ({ images }) => {
     const settings = {
-        dots: false,
+        dots: true,
         arrows: false,
         infinite: true,
         speed: 300,

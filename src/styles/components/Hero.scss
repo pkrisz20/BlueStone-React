@@ -2,6 +2,14 @@
     width: 100%;
     height: calc(100vh - 125px);
 
+    @media #{$r-max-xl3} {
+        height: calc(100vh - 95px);
+    }
+
+    @media #{$r-max-s} {
+        height: calc(100vh - 155px);
+    }
+
     .slick {
         &-list, &-track {
             width: 100%;
@@ -16,12 +24,60 @@
                 height: inherit !important;
             }
         }
+
+        &-dots {
+            position: absolute;
+            bottom: 40px;
+            right: 34.06%;
+            transform: translateX(34.06%);
+            display: flex !important;
+            align-items: center;
+            gap: 15px;
+
+            @media #{$r-max-l} {
+                right: 50%;
+                transform: translateX(50%);
+                bottom: 15px;
+            }
+
+            & > li {
+
+                button {
+                    background-color: $c-white;
+                    border-radius: 50%;
+                    width: 14px;
+                    height: 14px;
+                    color: transparent;
+                    transition: all .2s ease-in-out;
+                    cursor: pointer;
+
+                    @media #{$r-max-l} {
+                        width: 10px;
+                        height: 10px;
+                    }
+                }
+
+                &.slick-active {
+
+                    button {
+                        width: 33px;
+                        background-color: $c-theme;
+                        border: 1px solid $c-white;
+                        border-radius: 9px;
+                        @media #{$r-max-l} {
+                            width: 24px;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     &-item {
         height: inherit !important;
         width: 100%;
         display: flex !important;
+        position: relative;
 
         &-content {
             background: linear-gradient(to bottom, $c-theme, $c-darkblue);
@@ -31,11 +87,38 @@
             flex-direction: column;
             padding: 0 65px;
 
+            @media #{$r-max-xxl} {
+                padding: 0 30px;
+            }
+
+            @media #{$r-max-l} {
+                @include flexBox();
+                @include absoluteCenter();
+                width: 90%;
+                height: auto;
+                z-index: 4;
+                background: unset;
+            }
+
             &-title {
                 font-size: 60px;
                 font-weight: 700;
                 line-height: 72px;
                 color: $c-white;
+
+                @media #{$r-max-xxl} {
+                    font-size: 45px;
+                    line-height: 50px;
+                }
+
+                @media #{$r-max-l} {
+                    text-align: center;
+                }
+
+                @media #{$r-max-xs} {
+                    font-size: 40px;
+                    line-height: 44px;
+                }
             }
 
             &-desc {
@@ -44,6 +127,18 @@
                 line-height: 30px;
                 color: $c-white;
                 margin: 20px 0 30px;
+
+                @media #{$r-max-xl} {
+                    font-size: 16px;
+                    line-height: 26px;
+                    margin: 10px 0 20px;
+                }
+                @media #{$r-max-l} {
+                    text-align: center;
+                }
+                @media #{$r-max-xs} {
+                    font-size: 15px;
+                }
             }
 
             &-btn {
@@ -57,6 +152,17 @@
                 background-color: transparent;
                 border-radius: 5px;
                 cursor: pointer;
+
+                @media #{$r-max-xl} {
+                    font-size: 16px;
+                }
+                @media #{$r-max-l} {
+                    text-align: center;
+                }
+                @media #{$r-max-s} {
+                    width: 195px;
+                    height: 41px;
+                }
 
                 i {
                     transition: transform .2s ease-in-out;
@@ -73,6 +179,22 @@
 
         &-picture {
             width: calc(100% - 31.88%);
+            position: relative;
+
+            @media #{$r-max-l} {
+                width: 100%;
+            }
+
+            &::after {
+                @include absoluteFullSize();
+                content: "";
+                background-color: rgba($c-black, .3);
+
+                @media #{$r-max-l} {
+                    background-color: rgba($c-black, .75);
+                }
+            }
+
             picture {
                 img {
                     @include imageCover();
