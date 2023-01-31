@@ -1,0 +1,112 @@
+.works {
+    padding: 40px 0 140px;
+    width: 100%;
+
+    .slick {
+        &-list, &-track {
+            width: 100%;
+            height: inherit !important;
+            overflow-y: visible;
+            overflow-x: hidden;
+        }
+
+        &-slide {
+            width: 100%;
+            height: inherit !important;
+
+            &.slick-active {
+                .badge {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+            & > div {
+                height: inherit !important;
+            }
+        }
+    }
+
+    &-slider {
+
+        &-item {
+            height: inherit !important;
+            width: 100%;
+            display: flex !important;
+            position: relative;
+            padding: 0 15px;
+
+            .date {
+                z-index: 1;
+                position: absolute;
+                top: 40px;
+                left: 55px;
+                width: 81px;
+                height: 95px;
+                background-color: $c-light-red;
+                color: $c-white;
+                @include flexBox();
+                flex-direction: column;
+
+                &-day {
+                    font-size: 38px;
+                    font-weight: 600;
+                    line-height: 40px;
+                }
+
+                &-month {
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 27px;
+                }
+            }
+
+            .badge {
+                z-index: 2;
+                position: absolute;
+                right: 45px;
+                bottom: -50%;
+                transform: translateY(-50%);
+                width: 374px;
+                height: 230px;
+                background-color: $c-white;
+                padding: 30px;
+                box-shadow: 6px 6px 54px rgba($c-black, .28);
+                @include flexBox("space-around", "flex-start");
+                flex-direction: column;
+                visibility: hidden;
+                opacity: 0;
+                transition: visibility, opacity .4s ease-in;
+
+                &-title {
+                    color: $c-theme;
+                    font-size: 28px;
+                    font-weight: 700;
+                    line-height: 32px;
+                }
+
+                &-place, &-area {
+                    font-size: 16px;
+                    line-height: 27px;
+                    color: $c-1;
+                }
+
+                &-link {
+                    display: block;
+                    color: $c-theme;
+                    font-size: 17px;
+                    line-height: 26px;
+                    font-weight: 400;
+
+                    i {
+                        transform: translate(6px, 1px);
+                    }
+                }
+            }
+
+            picture {
+                @include paddingBottom(413, 695);
+            }
+        }
+    }
+}

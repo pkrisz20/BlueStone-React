@@ -1,5 +1,7 @@
 import Hero from "../components/Hero";
 import Post from "../components/Post";
+import Categories from "../components/Categories";
+import OurWorkComp from "../components/OurWorkComp";
 
 const Home = () => {
     const heroStuff = [
@@ -23,10 +25,73 @@ const Home = () => {
         }
     ];
 
+    const categories = [
+        {
+            title: "Exhibitions Stall Design & Fabrications",
+            image: "hero2.png",
+            link: true
+        },
+        {
+            title: "Booth Design & Build",
+            image: "design.png",
+            link: false
+        },
+        {
+            title: "Digital Marketing",
+            image: "hero3.png",
+            link: false
+        },
+        {
+            title: "Designing & Branding",
+            image: "brand.png",
+            link: false
+        },
+    ];
+
+    const works = [
+        {
+            day: 28,
+            month: "Nov",
+            image: "work1.png",
+            title: "Krystal Global Engineering Ltd.",
+            place: "Dusseldorf, Germany",
+            area: 32
+        },
+        {
+            day: 9,
+            month: "May",
+            image: "work2.png",
+            title: "WW2 exhibiton.",
+            place: "Berlin, Germany",
+            area: 18
+        },
+        {
+            day: 12,
+            month: "Sept",
+            image: "work3.png",
+            title: "Szent Istvan exhibition",
+            place: "Budapest, Hungary",
+            area: 120
+        },
+        {
+            day: 4,
+            month: "July",
+            image: "hero2.png",
+            title: "Independece Day.",
+            place: "Florida, USA",
+            area: 85
+        }
+    ];
+
     return (
         <main>
             <Hero images={heroStuff} />
+
             <Post mainTitle="BlueStone" subTitle="Design, Create and Build bespoke Exhibition Stall" descAbove="In the 20 Years of experience in Exhibition Stall Design and Installation field. Know we are own startup and  offering you Exclusive Range of Exhibition Stall and  Stand Design in India, Poland, Germany and Europe. We have built our business by taking the time to understand our clients objectives and creating a stand out solution in line with brand & budget." descBelow="We pride ourselves in providing a totally project-managed service, from start to finish. Our on-site team are able to install your unique stand before the show, ensuring that it achieves maximum impact and captivates your target market." />
+
+            <Categories categories={categories} />
+
+            <OurWorkComp works={works} />
         </main>
     );
 }

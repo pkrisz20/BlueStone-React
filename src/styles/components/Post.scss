@@ -1,24 +1,30 @@
 .post {
+    padding: 70px 0 30px;
+
     & > .wrapper {
-        width: 100%;
         display: flex;
+        gap: 120px;
     }
 
     &-titles {
+        flex: 1 1 48%;
+
         &-main {
             color: $c-theme;
             font-size: 56px;
             font-weight: 700;
             position: relative;
+            margin-bottom: 30px;
 
             &::after {
                 position: absolute;
                 left: 0;
-                bottom: -5px;
+                bottom: -4px;
                 height: 3px;
                 width: 90px;
                 content: "";
                 background-color: $c-theme;
+                border-radius: 3px;
             }
         }
 
@@ -31,6 +37,11 @@
     }
 
     &-content {
+        flex: 1 1 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
         &-desc {
             font-size: 17px;
             font-weight: 400;
@@ -39,6 +50,10 @@
 
             &:first-child {
                 margin-bottom: 15px;
+            }
+
+            &:nth-child(2) {
+                margin-bottom: 20px;
             }
         }
 
@@ -50,8 +65,8 @@
 
             i {
                 color: $c-theme;
-                font-size: 20px;
-                transform: translate(5px, 2px);
+                font-size: 16px;
+                transform: translate(5px, 1px);
             }
         }
     }

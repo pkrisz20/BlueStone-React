@@ -1,0 +1,23 @@
+.block-title {
+    width: 100%;
+    @include flexBox();
+    flex-direction: column;
+    margin-bottom: 40px;
+    padding: 0 30px;
+
+    &-main {
+        font-size: 42px;
+        font-weight: 800;
+        line-height: 63px;
+        color: $c-1;
+        text-align: center;
+    }
+
+    &-sub {
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 33px;
+        color: $c-2;
+        text-align: center;
+    }
+}
