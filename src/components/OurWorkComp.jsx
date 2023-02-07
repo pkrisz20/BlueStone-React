@@ -1,18 +1,41 @@
 import BlockTitle from "../components/BlockTitle";
-import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
 import "../styles/components/OurWorkComp.scss";
 
 const OurWorkComp = ({ works }) => {
+
+    function SampleNextArrow(props) {
+        const { className, onClick } = props;
+        return (
+            <button
+                className={className}
+                onClick={onClick}
+            />
+        );
+    }
+
+    function SamplePrevArrow(props) {
+        const { className, onClick } = props;
+        return (
+            <button
+                className={className}
+                onClick={onClick}
+            />
+        );
+    }
+
     const settings = {
         dots: false,
-        arrows: false,
+        arrows: true,
         infinite: true,
         speed: 300,
         slidesToShow: 1,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: '300px'
+        centerPadding: '300px',
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />
     };
 
     return (
@@ -30,7 +53,7 @@ const OurWorkComp = ({ works }) => {
                                         <time className="date-month">{ item.month }.</time>
                                     </div>
                                     <picture>
-                                        <img alt={ item.title } src={ require('../assets/' + item.image) } />
+                                        <img loading="lazy" alt={ item.title } src={ require('../assets/' + item.image) } />
                                     </picture>
                                     <div className="badge">
                                         <h4 className="badge-title">{ item.title }</h4>

@@ -2,6 +2,7 @@ import Hero from "../components/Hero";
 import Post from "../components/Post";
 import Categories from "../components/Categories";
 import OurWorkComp from "../components/OurWorkComp";
+import Opinions from "../components/Opinions";
 
 const Home = () => {
     const heroStuff = [
@@ -83,15 +84,29 @@ const Home = () => {
         }
     ];
 
+    const opinions = [
+        {
+            quoteBig: "You are amazing! You worked so hard for Cady's wedding.",
+            quoteSmall: "You are amazing! You worked so hard for Cady's wedding. You had every little detail under control you need to run my life!",
+            personName: "David Warmer",
+            position: "Founder",
+            personImage: "brand1.png"
+        }
+    ];
+
+    const brands = ["brand1.png", "brand2.png", "brand3.png", "brand4.png", "brand5.png", "brand6.png", "brand7.png"];
+
     return (
         <main>
-            <Hero images={heroStuff} />
+            <Hero images={ heroStuff } />
 
             <Post mainTitle="BlueStone" subTitle="Design, Create and Build bespoke Exhibition Stall" descAbove="In the 20 Years of experience in Exhibition Stall Design and Installation field. Know we are own startup and  offering you Exclusive Range of Exhibition Stall and  Stand Design in India, Poland, Germany and Europe. We have built our business by taking the time to understand our clients objectives and creating a stand out solution in line with brand & budget." descBelow="We pride ourselves in providing a totally project-managed service, from start to finish. Our on-site team are able to install your unique stand before the show, ensuring that it achieves maximum impact and captivates your target market." />
 
-            <Categories categories={categories} />
+            <Categories categories={ categories } />
 
-            <OurWorkComp works={works} />
+            <OurWorkComp works={ works } />
+
+            <Opinions brands={ brands } opinions={ opinions } />
         </main>
     );
 }

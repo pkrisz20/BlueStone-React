@@ -10,6 +10,7 @@ const Hero = ({ images }) => {
         speed: 300,
         slidesToShow: 1,
         slidesToScroll: 1,
+        autoplay: true
     };
 
     return (
@@ -26,7 +27,7 @@ const Hero = ({ images }) => {
                             <div className="hero-item-picture">
                                 <picture>
                                     <source srcSet={require('../assets/' + item.image)} />
-                                    <img src={require('../assets/' + item.image)} alt={item.image} />
+                                    <img loading="lazy" src={require('../assets/' + item.image)} alt={item.image} />
                                 </picture>
                             </div>
                         </div>

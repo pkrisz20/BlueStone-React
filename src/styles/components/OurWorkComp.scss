@@ -1,18 +1,16 @@
 .works {
-    padding: 40px 0 140px;
+    padding: 40px 0 90px;
     width: 100%;
 
     .slick {
         &-list, &-track {
             width: 100%;
-            height: inherit !important;
-            overflow-y: visible;
-            overflow-x: hidden;
         }
 
         &-slide {
             width: 100%;
             height: inherit !important;
+            cursor: grab;
 
             &.slick-active {
                 .badge {
@@ -25,6 +23,43 @@
                 height: inherit !important;
             }
         }
+
+        &-arrow {
+            position: absolute;
+            top: -75px;
+            z-index: 10;
+            color: transparent;
+            background-color: $c-theme;
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+        }
+        &-prev {
+            left: 50px;
+
+            &::before {
+                content: "\f060";
+                color: $c-white;
+                font-family: "Font Awesome 5 Free";
+                font-size: 20px;
+                font-weight: 900;
+            }
+        }
+        &-next {
+            right: 50px;
+
+            &::before {
+                font-size: 20px;
+                color: $c-white;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f061";
+            }
+        }
     }
 
     &-slider {
@@ -34,7 +69,7 @@
             width: 100%;
             display: flex !important;
             position: relative;
-            padding: 0 15px;
+            padding: 0 15px 115px 15px;
 
             .date {
                 z-index: 1;
@@ -65,8 +100,7 @@
                 z-index: 2;
                 position: absolute;
                 right: 45px;
-                bottom: -50%;
-                transform: translateY(-50%);
+                bottom: 35px;
                 width: 374px;
                 height: 230px;
                 background-color: $c-white;

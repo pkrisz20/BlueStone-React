@@ -1,14 +1,26 @@
-import { useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import useClickOutside from '../hooks/useClickOutside';
 import "../styles/components/Header.scss";
 
 const Header = () => {
+    const [scrollPosition, setScrollPosition] = useState(0);
     const [isOpenDropdown, setIsOpenDropdown] = useState(false)
     const [isOpenMobileDropdown, setIsOpenMobileDropdown] = useState(false)
     const [isOpenNav, setIsOpenNav] = useState(false)
     const mobileNavRef = useRef()
     const mobileNavOpenerRef = useRef()
+
+    const handleScroll = () => {
+        setScrollPosition(window.pageYOffset);
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     const openDropdown = useMemo(() => {
         return isOpenDropdown
@@ -27,7 +39,7 @@ const Header = () => {
     }, mobileNavOpenerRef)
 
     return (
-        <header className='header'>
+        <header className={`header ${scrollPosition > 0 ? 'sticky' : ''}`}>
             <div className="header-top">
                 <div className="wrapper">
                     <div className="header-top-countries">
@@ -52,7 +64,7 @@ const Header = () => {
                     <a className="header-bottom-logo">
                         <picture>
                             <source srcSet={require('../assets/logo-bluestone.webp')} />
-                            <img src={require('../assets/logo-bluestone.png')} alt="logo-bluestone" />
+                            <img loading="lazy" src={require('../assets/logo-bluestone.png')} alt="logo-bluestone" />
                         </picture>
                     </a>
                     <nav className="header-nav">

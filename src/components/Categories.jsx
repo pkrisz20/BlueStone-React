@@ -14,7 +14,7 @@ const Categories = ({ categories }) => {
                                 <article className="categories-grid-article" key={ index }>
                                     <div className="categories-grid-article-image">
                                         <picture>
-                                            <img alt={ item.title } src={ require('../assets/' + item.image) } />
+                                            <img loading="lazy" alt={ item.title } src={ require('../assets/' + item.image) } />
                                         </picture>
                                     </div>
                                     <div className="categories-grid-article-text">

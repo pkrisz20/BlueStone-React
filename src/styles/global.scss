@@ -18,3 +18,11 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+main {
+    padding-top: 125px;
+
+    @media #{$r-max-xl3} {
+        padding-top: 95px;
+    }
+}
