@@ -3,6 +3,7 @@ import Post from "../components/Post";
 import Categories from "../components/Categories";
 import OurWorkComp from "../components/OurWorkComp";
 import Opinions from "../components/Opinions";
+import LatestBlogs from "../components/LatestBlogs";
 
 const Home = () => {
     const heroStuff = [
@@ -84,13 +85,41 @@ const Home = () => {
         }
     ];
 
-    const opinions = [
+    const opinionsData = [
+        {
+            quoteBig: "You are amazing! You worked so hard for Cady's wedding.",
+            quoteSmall: "You are amazing! You worked so hard for Cady's wedding. You had every little detail under control you need to run my life!",
+            personName: "David Kernel",
+            position: "Project Manager",
+            personImage: "boy1.jpg"
+        },
+        {
+            quoteBig: "You are amazing! You worked so hard for Cady's wedding.",
+            quoteSmall: "You are amazing! You worked so hard for Cady's wedding. You had every little detail under control you need to run my life!",
+            personName: "Gergely Nagy",
+            position: "Backend Developer",
+            personImage: "boy2.jpg"
+        },
+        {
+            quoteBig: "You are amazing! You worked so hard for Cady's wedding.",
+            quoteSmall: "You are amazing! You worked so hard for Cady's wedding. You had every little detail under control you need to run my life!",
+            personName: "Sara Conor",
+            position: "Frontend Developer",
+            personImage: "girl1.jpg"
+        },
         {
             quoteBig: "You are amazing! You worked so hard for Cady's wedding.",
             quoteSmall: "You are amazing! You worked so hard for Cady's wedding. You had every little detail under control you need to run my life!",
             personName: "David Warmer",
             position: "Founder",
-            personImage: "brand1.png"
+            personImage: "boy3.jpg"
+        },
+        {
+            quoteBig: "You are amazing! You worked so hard for Cady's wedding.",
+            quoteSmall: "You are amazing! You worked so hard for Cady's wedding. You had every little detail under control you need to run my life!",
+            personName: "Caroline Beackham",
+            position: "Sales",
+            personImage: "girl2.jpg"
         }
     ];
 
@@ -106,7 +135,9 @@ const Home = () => {
 
             <OurWorkComp works={ works } />
 
-            <Opinions brands={ brands } opinions={ opinions } />
+            <Opinions brands={ brands } opinions={ opinionsData } />
+
+            <LatestBlogs />
         </main>
     );
 }

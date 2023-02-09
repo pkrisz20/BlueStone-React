@@ -1,4 +1,142 @@
 .opinions {
     background-color: $c-purple;
+    padding: 100px 0;
 
+    & > .wrapper {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    &-carousel {
+        width: 50%;
+
+        .slider-items {
+            .slick-slide {
+                position: relative;
+                cursor: grab;
+
+                & > div {
+                    margin-left: 75px;
+                }
+
+                .quote {
+                    &-picture {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+
+                        img {
+                            width: 49px;
+                            height: 39px;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+                    &-big {
+                        font-size: 26px;
+                        font-weight: 600;
+                        line-height: 39px;
+                        color: $c-white;
+                        margin-bottom: 14px;
+                    }
+                    &-small {
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 30px;
+                        color: $c-white;
+                        margin-bottom: 43px;
+                    }
+                    &-author {
+                        font-size: 20px;
+                        font-weight: 600;
+                        line-height: 32px;
+                        color: $c-white;
+                        margin-bottom: 60px;
+
+                        em {
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+        }
+
+        .slider-nav {
+            margin-left: 75px;
+
+            &-item {
+                display: flex !important;
+                justify-content: center;
+                position: relative;
+                cursor: pointer;
+
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba($c-blue2, .42);
+                }
+
+                img {
+                    display: block;
+                    width: 80px;
+                    height: 80px;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 50%;
+                    border: 1px solid $c-white;
+                }
+            }
+
+            .slick {
+                &-list {
+                    width: 64%;
+                }
+
+                &-arrow {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background-color: transparent;
+
+                    svg {
+                        width: 22px;
+                        height: 20px;
+                        fill: $c-white;
+                    }
+                }
+                &-prev {
+                    left: -30px;
+                }
+                &-next {
+                    right: calc(36% - 30px);
+                }
+
+                &-slide {
+                    &.slick-current {
+                        .slider-nav-item {
+                            &::before {
+                                background-color: transparent;
+                            }
+
+                            img {
+                                border: 1px solid rgba($c-white, 0.61);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-brands {
+        width: 50%;
+        @include flexBox("space-evenly");
+        flex-wrap: wrap;
+        gap: 60px 40px;
+    }
 }
