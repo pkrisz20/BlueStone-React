@@ -1,3 +1,187 @@
 .blogs {
-    padding: 70px 0;
+    padding: 70px 0 100px;
+
+    .slick {
+        &-list, &-track {
+            width: 100%;
+        }
+
+        &-track {
+            display: flex !important;
+        }
+
+        &-dots {
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex !important;
+            align-items: center;
+            gap: 15px;
+
+            & > li {
+                button {
+                    background-color: $c-grayD8;
+                    border-radius: 50%;
+                    width: 14px;
+                    height: 14px;
+                    color: transparent;
+                    transition: all .2s ease-in-out;
+                    cursor: pointer;
+                }
+
+                &.slick-active {
+                    button {
+                        width: 33px;
+                        background-color: $c-theme;
+                        border-radius: 9px;
+                    }
+                }
+            }
+        }
+
+        &-arrow {
+            z-index: 10;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 5px;
+            width: 50px;
+            height: 50px;
+            background-color: $c-theme;
+            color: transparent;
+            cursor: pointer;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                background-color: $c-light-red;
+            }
+
+            svg {
+                fill: $c-white;
+                width: 20px;
+                height: 20px;
+            }
+        }
+        &-prev {
+            left: -25px;
+        }
+        &-next {
+            right: -25px;
+        }
+
+        &-slide {
+            width: 100%;
+            margin: 0 15px;
+            height: inherit !important;
+
+            & > div {
+                height: 100% !important;
+            }
+        }
+    }
+
+    .slider {
+        &-item {
+            display: flex !important;
+            flex-direction: column;
+            border: 1px solid $c-grayD8;
+            height: 100%;
+
+            &-image {
+                width: 100%;
+                display: block;
+                overflow: hidden;
+                cursor: pointer;
+
+                &:hover {
+                    picture {
+                        img {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+
+                picture {
+                    @include paddingBottom(281, 450);
+                    img { transition: transform .2s ease-in-out; }
+                }
+            }
+
+            &-content {
+                padding: 30px 30px 40px 30px;
+
+                &-top {
+                    @include flexBox("flex-start");
+                    margin-bottom: 28px;
+
+                    .date {
+                        @include flexBox();
+                        flex-direction: column;
+                        border-right: 1px solid $c-grayD8;
+                        padding-right: 20px;
+
+                        &-day, &-month {
+                            font-weight: 400;
+                            line-height: 30px;
+                            color: $c-theme;
+                        }
+                        &-day {
+                            font-size: 34px;
+                        }
+                        &-month {
+                            font-size: 16px;
+                        }
+                    }
+                    .title {
+                        margin-left: 20px;
+                        font-size: 24px;
+                        font-weight: 600;
+                        line-height: 35px;
+                        color: $c-2;
+                        cursor: pointer;
+                        transition: all .2s ease-in-out;
+
+                        &:hover {
+                            color: $c-light-red;
+                        }
+                    }
+                }
+                &-text {
+                    font-size: 16px;
+                    line-height: 25px;
+                    font-weight: 400;
+                    color: $c-gray70;
+                    margin-bottom: 30px;
+                }
+                &-link {
+                    color: $c-theme;
+                    font-size: 16px;
+                    line-height: 25px;
+                    font-weight: 400;
+                    transition: all .2s ease-in-out;
+
+                    &:hover {
+                        color: $c-light-red;
+                        svg {
+                            fill: $c-light-red;
+                            transform: translateY(3px) translateX(5px);
+                        }
+                    }
+
+                    svg {
+                        transition: all .2s ease-in-out;
+                        display: inline-block;
+                        transform: translateY(3px);
+                        width: 16px;
+                        height: 15px;
+                        fill: $c-theme;
+                    }
+                }
+            }
+        }
+    }
 }

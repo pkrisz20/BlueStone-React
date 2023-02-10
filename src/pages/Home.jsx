@@ -125,6 +125,44 @@ const Home = () => {
 
     const brands = ["brand1.png", "brand2.png", "brand3.png", "brand4.png", "brand5.png", "brand6.png", "brand7.png"];
 
+    const blogs = [
+        {
+            title: "Questions To Ask Yourself Before Renting Or Buying",
+            desc: "Trade shows made its place long back while creating a platform to generate business and build professional networks at an international level. Now exhibiting in trade shows is the key",
+            month: "Mar",
+            day: 30,
+            image: "hero3.png"
+        },
+        {
+            title: "Salon VS Foire, quelle est la différence?",
+            desc: "La foire se caractérise comme une manifestation commerciale regroupant des exposants de secteurs d’activité très diversifiés.",
+            month: "Sep",
+            day: 26,
+            image: "work3.png"
+        },
+        {
+            title: "B2B Marketing Trends to ensure a successful exhibition",
+            desc: "The B2B marketing landscape is radically changing. With so many tools on the market that achieve results faster and more efficiently,",
+            month: "Oct",
+            day: 21,
+            image: "design.png"
+        },
+        {
+            title: "Questions To Ask Yourself Before Renting Or Buying",
+            desc: "Trade shows made its place long back while creating a platform to generate business and build professional networks at an international level. Now exhibiting in trade shows is the key",
+            month: "Dec",
+            day: 6,
+            image: "work1.png"
+        },
+        {
+            title: "What We Do",
+            desc: "Best Exhibition Stall Designers in India, Europe and Poland.",
+            month: "Apr",
+            day: 12,
+            image: "work2.png"
+        }
+    ];
+
     return (
         <main>
             <Hero images={ heroStuff } />
@@ -137,7 +175,7 @@ const Home = () => {
 
             <Opinions brands={ brands } opinions={ opinionsData } />
 
-            <LatestBlogs />
+            <LatestBlogs blogArticles={ blogs } />
         </main>
     );
 }
