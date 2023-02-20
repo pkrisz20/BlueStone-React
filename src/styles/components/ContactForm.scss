@@ -1,0 +1,75 @@
+.contact-form {
+    padding: 60px 0;
+
+    & > .wrapper {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+    }
+
+    &-texts {
+        width: 30%;
+
+        &-main {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 70px;
+            color: $c-1;
+        }
+        &-submain {
+            font-size: 61px;
+            font-weight: 800;
+            line-height: 91px;
+            color: $c-1;
+        }
+        &-paragraph {
+            color: $c-gray70;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 25px;
+        }
+        &-email, &-tel {
+            margin: 15px 0;
+            display: block;
+            color: $c-theme;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 27px;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                color: $c-dark;
+            }
+        }
+    }
+    &-container {
+        width: 70%;
+
+        &-info {
+            color: $c-dark;
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 33px;
+            margin-bottom: 20px;
+        }
+
+        .form {
+            &-row {
+                display: flex;
+                gap: 30px;
+                margin-bottom: 30px;
+
+                &-item {
+                    width: 100%;
+                    position: relative;
+                }
+            }
+            &-label {
+                display: none;
+            }
+            &-input {
+                height: 40px;
+            }
+        }
+    }
+}

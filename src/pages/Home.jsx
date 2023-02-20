@@ -4,6 +4,7 @@ import Categories from "../components/Categories";
 import OurWorkComp from "../components/OurWorkComp";
 import Opinions from "../components/Opinions";
 import LatestBlogs from "../components/LatestBlogs";
+import ContactForm from "../components/ContactForm";
 
 const Home = () => {
     const heroStuff = [
@@ -176,6 +177,8 @@ const Home = () => {
             <Opinions brands={ brands } opinions={ opinionsData } />
 
             <LatestBlogs blogArticles={ blogs } />
+
+            <ContactForm />
         </main>
     );
 }

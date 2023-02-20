@@ -33,6 +33,7 @@ const OurWorkComp = ({ works }) => {
         slidesToShow: 1,
         slidesToScroll: 1,
         centerMode: true,
+        autoplay: false,
         centerPadding: '300px',
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow />

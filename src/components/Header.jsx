@@ -52,9 +52,9 @@ const Header = () => {
                         <a className="header-top-contact-link" href="tel:+91 99251 77600"><i className="fas fa-phone"></i> +91 99251 77600</a>
                         <a className="header-top-contact-link" href="mail:info@bluestoneworldwide.com"><i className="fas fa-envelope"></i> info@bluestoneworldwide.com</a>
                         <div className="socials">
-                            <a className="socials-link" href="https://twitter.com/" target="_blank"><i className="fab fa-twitter"></i></a>
-                            <a className="socials-link" href="https://www.facebook.com/" target="_blank"><i className="fab fa-facebook-f"></i></a>
-                            <a className="socials-link" href="https://www.youtube.com/" target="_blank"><i className="fab fa-youtube"></i></a>
+                            <a className="socials-link" href="https://twitter.com/" target="blank"><i className="fab fa-twitter"></i></a>
+                            <a className="socials-link" href="https://www.facebook.com/" target="blank"><i className="fab fa-facebook-f"></i></a>
+                            <a className="socials-link" href="https://www.youtube.com/" target="blank"><i className="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
@@ -107,9 +107,9 @@ const Header = () => {
                         <a className="header-mobile-top-countries-link" href="/">USA</a>
                     </div>
                     <div className="socials">
-                        <a className="socials-link" href="https://twitter.com/" target="_blank"><i className="fab fa-twitter"></i></a>
-                        <a className="socials-link" href="https://www.facebook.com/" target="_blank"><i className="fab fa-facebook-f"></i></a>
-                        <a className="socials-link" href="https://www.youtube.com/" target="_blank"><i className="fab fa-youtube"></i></a>
+                        <a className="socials-link" href="https://twitter.com/" target="blank"><i className="fab fa-twitter"></i></a>
+                        <a className="socials-link" href="https://www.facebook.com/" target="blank"><i className="fab fa-facebook-f"></i></a>
+                        <a className="socials-link" href="https://www.youtube.com/" target="blank"><i className="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <nav className="header-nav">
