@@ -1,7 +1,14 @@
 import Select from 'react-select';
+import { useState } from 'react';
+import { contactSchema } from "../validations/contactValidation";
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { IoCloseSharp } from "react-icons/io5";
 import "../styles/components/ContactForm.scss";
 
 const ContactForm = () => {
+
+    const [selectedCountry, setSelectedCountry] = useState(null);
 
     const options = [
         { value: 'Serbia', label: 'Serbia' },
@@ -12,6 +19,21 @@ const ContactForm = () => {
         { value: 'Russia', label: 'Russia' },
         { value: 'Croatia', label: 'Croatia' },
     ];
+
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        mode: "onChange",
+        resolver: yupResolver(contactSchema),
+    });
+
+    const changeCountry = (event) => {
+        console.log(event);
+        // setSelectedCountry(event);
+    }
+
+    const submitForm = (data) => {
+        console.table(data);
+        console.log(selectedCountry);
+    }
 
     return (
         <section className='contact-form'>
@@ -26,30 +48,61 @@ const ContactForm = () => {
 
                 <div className="contact-form-container">
                     <h4 className="contact-form-container-info">Complete the form below...</h4>
-                    <form>
+                    <form onSubmit={ handleSubmit(submitForm) }>
                         <div className="form-row">
-                            <div className="form-row-item">
+                            <div className={`form-row-item ${errors.fullname ? 'invalid' : ''}`}>
                                 <label htmlFor="fullname" className="form-label">Full Name</label>
-                                <input className="form-input" id="fullname" type="text" placeholder="Full Name" />
+                                <input className="form-input" id="fullname" name="fullname" type="text" placeholder="Full Name" {...register("fullname")} />
+                                {
+                                    errors.fullname && (
+                                        <>
+                                            <small className='form-row-item-error'>{ errors.fullname?.message }</small>
+                                            <IoCloseSharp className="form-row-item-wrong" />
+                                        </>
+                                    )
+                                }
                             </div>
-                            <div className="form-row-item">
+                            <div className={`form-row-item ${errors.company ? 'invalid' : ''}`}>
                                 <label htmlFor="company" className="form-label">Your Company Name</label>
-                                <input className="form-input" id="company" type="text" placeholder="Your Company Name" />
+                                <input className="form-input" id="company" name="company" type="text" placeholder="Your Company Name" {...register("company")} />
+                                {
+                                    errors.company && (
+                                        <>
+                                            <small className='form-row-item-error'>{ errors.company?.message }</small>
+                                            <IoCloseSharp className="form-row-item-wrong" />
+                                        </>
+                                    )
+                                }
                             </div>
                         </div>
                         <div className="form-row">
-                            <div className="form-row-item">
+                            <div className={`form-row-item ${errors.email ? 'invalid' : ''}`}>
                                 <label htmlFor="email" className="form-label">Business email</label>
-                                <input className="form-input" id="email" type="text" placeholder="Business email" />
+                                <input className="form-input" id="email" name="email" type="text" placeholder="Business email" {...register("email")} />
+                                {
+                                    errors.email && (
+                                        <>
+                                            <small className='form-row-item-error'>{ errors.email?.message }</small>
+                                            <IoCloseSharp className="form-row-item-wrong" />
+                                        </>
+                                    )
+                                }
                             </div>
-                            <div className="form-row-item">
+                            <div className={`form-row-item ${errors.phone ? 'invalid' : ''}`}>
                                 <label htmlFor="phone" className="form-label">Phone Number</label>
-                                <input className="form-input" id="phone" type="number" placeholder="Phone Number" />
+                                <input className="form-input" id="phone" name="phone" type="number" placeholder="Phone Number" {...register("phone")} />
+                                {
+                                    errors.phone && (
+                                        <>
+                                            <small className='form-row-item-error'>{ errors.phone?.message }</small>
+                                            <IoCloseSharp className="form-row-item-wrong" />
+                                        </>
+                                    )
+                                }
                             </div>
                         </div>
                         <div className="form-row">
-                            <div className="form-row-item">
-                                <label htmlFor="country" className="form-label">Select your Country</label>
+                            <div className={`form-row-item ${errors.country ? 'invalid' : ''}`}>
                                 <Select
                                     className="form-input"
                                     classNamePrefix="select"
@@ -57,24 +110,49 @@ const ContactForm = () => {
                                     defaultValue={null}
                                     isClearable={true}
                                     isSearchable={true}
-                                    name="country"
-                                    id="country"
                                     options={options}
+                                    name="country"
+                                    onChange={ changeCountry }
+                                    {...register("country")}
                                 />
+                                {
+                                    errors.country && (
+                                        <>
+                                            <small className='form-row-item-error'>{ errors.country?.message }</small>
+                                            <IoCloseSharp className="form-row-item-wrong" />
+                                        </>
+                                    )
+                                }
                             </div>
-                            <div className="form-row-item">
+                            <div className={`form-row-item ${errors.services ? 'invalid' : ''}`}>
                                 <label htmlFor="services" className="form-label">What service are you interested in?</label>
-                                <input className="form-input" id="services" type="text" placeholder="What service are you interested in?" />
+                                <input className="form-input" id="services" name="services" type="text" placeholder="What service are you interested in?" {...register("services")} />
+                                {
+                                    errors.services && (
+                                        <>
+                                            <small className='form-row-item-error'>{ errors.services?.message }</small>
+                                            <IoCloseSharp className="form-row-item-wrong" />
+                                        </>
+                                    )
+                                }
                             </div>
                         </div>
                         <div className="form-row">
-                            <div className="form-row-item">
+                            <div className={`form-row-item ${errors.description ? 'invalid' : ''}`}>
                                 <label htmlFor="description" className="form-label">Tell us about your Project</label>
-                                <textarea className="form-input--textarea" id="description" placeholder="Tell us about your Project" />
+                                <textarea className="form-input--textarea" id="description" name="description" placeholder="Tell us about your Project" {...register("description")} />
+                                {
+                                    errors.description && (
+                                        <>
+                                            <small className='form-row-item-error'>{ errors.description?.message }</small>
+                                            <IoCloseSharp className="form-row-item-wrong" />
+                                        </>
+                                    )
+                                }
                             </div>
                         </div>
                         <div className="form-row">
-                            <button className="form-submit" type="submit">Send a request</button>
+                            <button className="form-submit" type="submit" value="Submit">Send a request</button>
                         </div>
                     </form>
                 </div>
