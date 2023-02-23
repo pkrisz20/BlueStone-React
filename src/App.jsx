@@ -7,6 +7,7 @@ import OurWorkPage from './pages/OurWork';
 import BlogsPage from './pages/Blogs';
 import ResourcePage from './pages/Resource';
 import ContactPage from './pages/Contact';
+import Footer from './components/Footer';
 // import { setTranslations, setDefaultLanguage } from 'react-multi-lang';
 // import hu from './lang/hu.json';
 // import en from './lang/en.json';
@@ -31,6 +32,7 @@ function App() {
             <Route path="/resource" element={<ResourcePage />}/>
             <Route path="/contact" element={<ContactPage />}/>
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

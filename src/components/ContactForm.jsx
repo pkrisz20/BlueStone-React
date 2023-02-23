@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState, useRef } from 'react';
 import { contactSchema } from "../validations/contactValidation";
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -8,17 +8,8 @@ import "../styles/components/ContactForm.scss";
 const ContactForm = () => {
 
     const [selectedCountry, setSelectedCountry] = useState("");
-    const [fullname, setFullname] = useState("");
-    const [company, setCompany] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState(null);
-    const [services, setServices] = useState("");
-    const [description, setDescription] = useState("");
     const [selectorOpen, setSelectorOpen] = useState(false);
-
-    useEffect(() => {
-        console.log(selectedCountry);
-    }, [selectedCountry])
+    const formRef = useRef(null);
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         mode: "onChange",
@@ -35,7 +26,7 @@ const ContactForm = () => {
 
     const submitForm = (data) => {
         console.table(data);
-        console.log('submitted');
+        formRef.current.reset();
     }
 
     return (
@@ -51,11 +42,11 @@ const ContactForm = () => {
 
                 <div className="contact-form-container">
                     <h4 className="contact-form-container-info">Complete the form below...</h4>
-                    <form onSubmit={ handleSubmit(submitForm) }>
+                    <form onSubmit={ handleSubmit(submitForm) } ref={ formRef }>
                         <div className="form-row">
                             <div className={`form-row-item ${errors.fullname ? 'invalid' : ''}`}>
                                 <label htmlFor="fullname" className="form-label">Full Name</label>
-                                <input className="form-input" id="fullname" name="fullname" type="text" placeholder="Full Name" {...register("fullname")} onChange={ (e) => setFullname(e.target.value) } />
+                                <input className="form-input" id="fullname" name="fullname" type="text" placeholder="Full Name" {...register("fullname")} />
                                 {
                                     errors.fullname && (
                                         <>
@@ -67,7 +58,7 @@ const ContactForm = () => {
                             </div>
                             <div className={`form-row-item ${errors.company ? 'invalid' : ''}`}>
                                 <label htmlFor="company" className="form-label">Your Company Name</label>
-                                <input className="form-input" id="company" name="company" type="text" placeholder="Your Company Name" {...register("company")} onChange={ (e) => setCompany(e.target.value) } />
+                                <input className="form-input" id="company" name="company" type="text" placeholder="Your Company Name" {...register("company")} />
                                 {
                                     errors.company && (
                                         <>
@@ -81,7 +72,7 @@ const ContactForm = () => {
                         <div className="form-row">
                             <div className={`form-row-item ${errors.email ? 'invalid' : ''}`}>
                                 <label htmlFor="email" className="form-label">Business email</label>
-                                <input className="form-input" id="email" name="email" type="text" placeholder="Business email" {...register("email")} onChange={ (e) => setEmail(e.target.value) } />
+                                <input className="form-input" id="email" name="email" type="text" placeholder="Business email" {...register("email")} />
                                 {
                                     errors.email && (
                                         <>
@@ -93,7 +84,7 @@ const ContactForm = () => {
                             </div>
                             <div className={`form-row-item ${errors.phone ? 'invalid' : ''}`}>
                                 <label htmlFor="phone" className="form-label">Phone Number</label>
-                                <input className="form-input" id="phone" name="phone" type="number" placeholder="Phone Number" {...register("phone")} onChange={ (e) => setPhone(e.target.value) } />
+                                <input className="form-input" id="phone" name="phone" type="number" placeholder="Phone Number" {...register("phone")} />
                                 {
                                     errors.phone && (
                                         <>
@@ -125,7 +116,7 @@ const ContactForm = () => {
                             </div>
                             <div className={`form-row-item ${errors.services ? 'invalid' : ''}`}>
                                 <label htmlFor="services" className="form-label">What service are you interested in?</label>
-                                <input className="form-input" id="services" name="services" type="text" placeholder="What service are you interested in?" {...register("services")} onChange={ (e) => setServices(e.target.value) } />
+                                <input className="form-input" id="services" name="services" type="text" placeholder="What service are you interested in?" {...register("services")} />
                                 {
                                     errors.services && (
                                         <>
@@ -139,7 +130,7 @@ const ContactForm = () => {
                         <div className="form-row">
                             <div className={`form-row-item ${errors.description ? 'invalid' : ''}`}>
                                 <label htmlFor="description" className="form-label">Tell us about your Project</label>
-                                <textarea className="form-input--textarea" id="description" name="description" placeholder="Tell us about your Project" {...register("description")} onChange={ (e) => setDescription(e.target.value) } />
+                                <textarea className="form-input--textarea" id="description" name="description" placeholder="Tell us about your Project" {...register("description")} />
                                 {
                                     errors.description && (
                                         <>

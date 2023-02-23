@@ -1,0 +1,177 @@
+.footer {
+    background-color: $c-1;
+    padding: 60px 0 40px;
+
+    &-flex {
+        width: 100%;
+        border-bottom: 1px solid $c-gray70;
+        padding-bottom: 40px;
+        @include flexBox("center", "flex-start", 40px);
+
+        .logo {
+            display: inline-block;
+
+            .subtext {
+                display: flex;
+                align-items: center;
+
+                &::before {
+                    content: '';
+                    height: 2px;
+                    background-color: $c-9;
+                    width: 50%;
+                }
+
+                &::after {
+                    content: '';
+                    height: 2px;
+                    background-color: $c-9;
+                    width: 50%;
+                }
+
+                & > p {
+                    width: 100%;
+                    text-align: center;
+                    color: $c-9;
+                    line-height: 18px;
+                    font-size: 12px;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        .informations {
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+
+            &-country {
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 30px;
+                color: $c-white;
+                text-transform: uppercase;
+            }
+
+            &-address, &-email, &-tel {
+                font-size: 16px;
+                line-height: 24px;
+                color: $c-9;
+                font-weight: 400;
+                display: flex;
+                gap: 15px;
+                transition: all .3s ease-in-out;
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    transform: translateY(2px);
+                    fill: $c-9;
+                    transition: all .3s ease-in-out;
+                }
+
+                &:hover {
+                    color: $c-white;
+
+                    svg {
+                        fill: $c-white;
+                    }
+                }
+            }
+        }
+
+        &-grids {
+            @include gridBox("center", 2, 60px, 35px);
+
+            .quick {
+                &-links {
+                    @include flexBox("flex-start", "flex-start", 8px);
+                    flex-direction: column;
+
+                    &-title {
+                        color: $c-white;
+                        font-size: 22px;
+                        font-weight: 600;
+                        line-height: 33px;
+                    }
+
+                    &-link {
+                        font-size: 16px;
+                        color: $c-grayD8;
+                        font-weight: 400;
+                        line-height: 25px;
+                        transition: all .3s ease-in-out;
+
+                        &:hover {
+                            color: $c-6;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-bottom {
+        padding-top: 40px;
+        @include flexBox("space-between", "flex-start");
+
+        &-left {
+            &-rights {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 26px;
+                color: $c-9;
+                margin-bottom: 10px;
+            }
+
+            &-navs {
+                @include flexBox("flex-start", "center", 40px);
+
+                & > a {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: $c-9;
+                    line-height: 20px;
+                    position: relative;
+
+                    &:not(:last-child):after {
+                        content: "";
+                        position: absolute;
+                        right: -20px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 1px;
+                        height: 16px;
+                        background-color: $c-gray3A;
+                    }
+                }
+            }
+        }
+
+        &-right {
+            @include flexBox("center", "center", 20px);
+
+            .social {
+                position: relative;
+
+                i {
+                    font-size: 22px;
+                    color: $c-gray70;
+                }
+
+                &:not(:last-child):after {
+                    content: "";
+                    position: absolute;
+                    right: -10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 1px;
+                    height: 23px;
+                    background-color: $c-gray3A;
+                }
+            }
+        }
+    }
+}

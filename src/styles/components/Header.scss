@@ -210,7 +210,7 @@
                         transition: all .3s ease-in-out;
 
                         &:hover {
-                            background-color: $c-darkblue;
+                            background-color: $c-light-red;
                         }
                     }
                 }
@@ -427,7 +427,7 @@
                             padding: 10px 0 10px 10px;
 
                             &:hover {
-                                background-color: $c-darkblue;
+                                background-color: $c-light-red;
                             }
                         }
 
@@ -445,7 +445,8 @@
                             margin: 10px 0 10px 10px;
 
                             &:hover {
-                                background-color: $c-b;
+                                background-color: $c-light-red;
+                                color: $c-white;
                             }
                         }
 
