@@ -9,9 +9,10 @@ const OurWorkComp = ({ works }) => {
         const { className, onClick } = props;
         return (
             <button
+                style={{ fontSize: 0 }}
                 className={className}
                 onClick={onClick}
-            />
+            >Next</button>
         );
     }
 
@@ -19,9 +20,10 @@ const OurWorkComp = ({ works }) => {
         const { className, onClick } = props;
         return (
             <button
+                style={{ fontSize: 0 }}
                 className={className}
                 onClick={onClick}
-            />
+            >Prev</button>
         );
     }
 

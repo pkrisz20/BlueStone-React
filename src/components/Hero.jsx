@@ -1,6 +1,6 @@
-import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "../styles/components/Hero.scss"
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "../styles/components/Hero.scss";
 
 const Hero = ({ images }) => {
     const settings = {

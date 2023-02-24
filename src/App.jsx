@@ -8,17 +8,8 @@ import BlogsPage from './pages/Blogs';
 import ResourcePage from './pages/Resource';
 import ContactPage from './pages/Contact';
 import Footer from './components/Footer';
-// import { setTranslations, setDefaultLanguage } from 'react-multi-lang';
-// import hu from './lang/hu.json';
-// import en from './lang/en.json';
-// import sr from './lang/sr.json';
-
-// setTranslations({ hu, en, sr });
-// setDefaultLanguage('en');
 
 function App() {
-  // const lang = useParams();
-
   return (
     <div className="App">
       <Router>

@@ -4,21 +4,17 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { IoCloseSharp } from "react-icons/io5";
 import "../styles/components/ContactForm.scss";
+import useToggle from "../hooks/useToggle";
 
 const ContactForm = () => {
-
     const [selectedCountry, setSelectedCountry] = useState("");
-    const [selectorOpen, setSelectorOpen] = useState(false);
+    const [toggleSelector, setToggleSelector] = useToggle(false);
     const formRef = useRef(null);
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         mode: "onChange",
         resolver: yupResolver(contactSchema),
     });
-
-    const onSelector = () => {
-        setSelectorOpen(prev => prev = !prev);
-    }
 
     const handleChange = (event) => {
         setSelectedCountry(event.target.value);
@@ -96,8 +92,9 @@ const ContactForm = () => {
                             </div>
                         </div>
                         <div className="form-row">
-                            <div className={`form-row-item selector ${errors.country ? 'invalid' : ''} ${selectorOpen ? 'selector-open' : ''}`}>
-                                <select className='select' name="country" defaultValue={ selectedCountry } onChange={ handleChange } {...register("country")} onClick={ onSelector }>
+                            <div className={`form-row-item selector ${errors.country ? 'invalid' : ''} ${toggleSelector ? 'selector-open' : ''}`}>
+                                <label htmlFor="country" className="form-label">Country</label>
+                                <select className='select' name="country" id='country' defaultValue={ selectedCountry } onChange={ handleChange } {...register("country")} onClick={ setToggleSelector }>
                                     <option disabled={true} value="">
                                         Select your Country
                                     </option>

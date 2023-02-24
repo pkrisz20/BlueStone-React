@@ -12,9 +12,10 @@ const Opinions = ({ opinions, brands }) => {
         const { className, onClick } = props;
         return (
             <button
+                style={{ fontSize: 0 }}
                 className={className}
                 onClick={onClick}
-            ><ImArrowRight2 /></button>
+            ><ImArrowRight2 />Next</button>
         );
     }
 
@@ -22,9 +23,10 @@ const Opinions = ({ opinions, brands }) => {
         const { className, onClick } = props;
         return (
             <button
+                style={{ fontSize: 0 }}
                 className={className}
                 onClick={onClick}
-            ><ImArrowLeft2 /></button>
+            ><ImArrowLeft2 />Prev</button>
         );
     }
 

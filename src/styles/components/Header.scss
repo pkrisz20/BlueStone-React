@@ -188,6 +188,32 @@
                         font-weight: 400;
                         line-height: 25px;
                         font-size: 16px;
+                        position: relative;
+
+                        &::after {
+                            position: absolute;
+                            content: "";
+                            bottom: -5px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 0;
+                            height: 3px;
+                            background: $c-theme;
+                            transition: width .3s ease;
+                            border-radius: 5px;
+                        }
+                        &:hover::after {
+                            width: 100%;
+                        }
+
+                        &.active {
+                            color: $c-theme;
+                            font-weight: 600;
+
+                            &::after {
+                                width: 100%;
+                            }
+                        }
 
                         i {
                             transform: translateX(5px);
@@ -421,14 +447,27 @@
 
                 &-list {
                     &-item {
+                        border-radius: 5px;
+
+                        &-link {
+                            display: block;
+                            padding: 10px 0 10px 10px;
+
+                            &:hover {
+                                color: $c-white !important;
+                            }
+                        }
                         &:not(:last-child) {
                             cursor: pointer;
                             transition: .2s ease-in-out;
-                            padding: 10px 0 10px 10px;
 
                             &:hover {
                                 background-color: $c-light-red;
                             }
+                        }
+
+                        &:has(> a.active) {
+                            background-color: $c-light-red;
                         }
 
                         &-button {
@@ -464,7 +503,6 @@
                             }
 
                             .dropdown-menu {
-                                margin-left: 40px;
                                 height: 0;
                                 opacity: 0;
                                 visibility: hidden;
@@ -477,7 +515,17 @@
                                 }
 
                                 &-item {
-                                    padding: 10px 0;
+                                    border-radius: 5px;
+
+                                    &-link {
+                                        display: block;
+                                        padding: 10px 0 10px 40px;
+
+                                        &:hover {
+                                            color: $c-white !important;
+                                            background-color: $c-blue2;
+                                        }
+                                    }
                                 }
                             }
                         }
