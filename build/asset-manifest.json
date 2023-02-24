@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8a8aad88.css",
+    "main.js": "/static/js/main.9923bb4f.js",
+    "static/media/hero.png": "/static/media/hero.2e707e5e08737ee73fa5.png",
+    "static/media/work1.png": "/static/media/work1.946a96e041e16f6c57ce.png",
+    "static/media/hero3.png": "/static/media/hero3.680416101be22a605236.png",
+    "static/media/hero2.png": "/static/media/hero2.2f8306bdc9d5abf82939.png",
+    "static/media/design.png": "/static/media/design.9ff44743d9600b228daa.png",
+    "static/media/work3.png": "/static/media/work3.6fdf89be3ae7d4c81ac8.png",
+    "static/media/brand.png": "/static/media/brand.8001602dcc73d05c05c3.png",
+    "static/media/work2.png": "/static/media/work2.ce703a0ed7ff10bb1d60.png",
+    "static/media/girl2.jpg": "/static/media/girl2.cce0fab03399fbedbd72.jpg",
+    "static/media/girl1.jpg": "/static/media/girl1.01e630ddaab5a7c6f639.jpg",
+    "static/media/boy2.jpg": "/static/media/boy2.37013099cde1e3e9f918.jpg",
+    "static/media/boy3.jpg": "/static/media/boy3.f567325f829779fc1346.jpg",
+    "static/media/boy1.jpg": "/static/media/boy1.08a1091b02c8c3a61c3c.jpg",
+    "static/media/logo-bluestone.png": "/static/media/logo-bluestone.60dae4143f515c88d284.png",
+    "static/media/brand4.png": "/static/media/brand4.340d5c655d5e9ab7b7e7.png",
+    "static/media/logo-bluestone.webp": "/static/media/logo-bluestone.3086c2062efb221499e7.webp",
+    "static/media/brand2.png": "/static/media/brand2.1a09e707aa8fc55cc0d7.png",
+    "static/media/brand5.png": "/static/media/brand5.590c06ad5fb51fee7b54.png",
+    "static/media/logo-white.webp": "/static/media/logo-white.6c35bd3ad488e0825fe4.webp",
+    "index.html": "/index.html",
+    "main.8a8aad88.css.map": "/static/css/main.8a8aad88.css.map",
+    "main.9923bb4f.js.map": "/static/js/main.9923bb4f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a8aad88.css",
+    "static/js/main.9923bb4f.js"
+  ]
+}
