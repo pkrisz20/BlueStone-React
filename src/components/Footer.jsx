@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { CgPhone } from "react-icons/cg";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { TfiEmail } from "react-icons/tfi";
-import "../styles/components/footer.scss";
+import "../styles/components/Footer.scss";
 
 const Footer = () => {
     return (
